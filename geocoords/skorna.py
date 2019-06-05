@@ -16,9 +16,10 @@ hamburg_mitte = hamburg_mitte_geocode.point
 
 hamburg_coords = pygeoj.load("hamburg_city_districts.geojson")
 
+
 with open('skorna_datasafe.csv', 'w') as csv_file: # Datei anlegen
         writer = csv.writer(csv_file,lineterminator='\n')
-        writer.writerow(["Stadtteil,Stadtbezirk,Stadt,Land,Entfernung,Bars,Diskotheken,Kinos,Theater,Museeen"])
+        writer.writerow(["Stadtteil","Stadtbezirk","Stadt","Land","Entfernung","Bars","Diskotheken","Kinos","Theater","Museeen"])
 
 time.sleep(0.1) # Timeouthandling
 
@@ -40,6 +41,8 @@ for feature in hamburg_coords:
     # You Either Code Properly, Or You Code Long Enough To See Yourself Become Hated By Everyone On Your Team
     print(koord_str) # print(koord)
 
+    ##### FEHLER -- DOPPELTES VORKOMMEN EINIGER STADTTEILE!
+
     #Timeouthandling
     time.sleep(0.1)
     # DISTANZ VON GEOCODE ZU GEOCODE BERECHNEN
@@ -52,12 +55,17 @@ for feature in hamburg_coords:
     skorna_array.append(entfernung)
     print(skorna_array) # Super krasses Array mit allen wichtigen Informationen, yo.
     
-    # Einbauen: OpenStreetMap -- Bars, Diskotheken, etc. (mehrere Keywords)
+    # Einbauen: Overpass-Turbo -- Bars, Diskotheken, etc. (mehrere Keywords)
+    # OverPass-Turbo:
+    # - Wizard: admin_level=10
+    # - Wizard: pubs or bars in Hamburg / "St. Pauli" etc.
+    # - "@id": "relation/28931" --> 36000xxxxx / 3600028931 --> Python-Requests an Server/API stellen
+    # - 
 
     # CSV SCHREIBEN
     with open('skorna_datasafe.csv', 'a') as csv_file: # append
         writer = csv.writer(csv_file,lineterminator='\n')
-        writer.writerow(skorna_array)
+        writer.writerow(skorna_array) # hier ggf. noch Darstellung anpassen
 
     # Timeouthandling
     time.sleep(0.25)
