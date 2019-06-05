@@ -47,6 +47,16 @@ def hamburg_POIs_count ( keywordString , district ):
     payload = dict(data='') # requires appropiate payload
     # r = requests.post('https://overpass-api.de/api/interpreter', data=payload)
 
+    # Notiz:
+    '''
+
+    Jetzt, wo die ID richtig funktioniert, kann man ein Request mit Payload versehen.
+    Dieser Request benötigt dann die Parameter von Overpass-Turbo + ID des Stadtbezirkes.
+    Die auftretenden Nodes werden allesamt gezählt und als gesamte Summe zurückgegeben.
+    So hat man die einzelnen Vorkommnisse nach bestimmten Parametern.
+
+    '''
+
     # print(r.status_code)
 
     return keyword_count
