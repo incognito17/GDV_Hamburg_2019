@@ -17,7 +17,7 @@ hamburg_coords = pygeoj.load("hamburg_city_districts.geojson")
 
 with open('skorna_datasafe.csv', 'w') as csv_file: # Datei anlegen
         writer = csv.writer(csv_file,lineterminator='\n')
-        writer.writerow(["Stadtteil,WasauchimmerdasfuereinQuatschseinsoll,Stadt,Land,Entfernung"])
+        writer.writerow(["Stadtteil,Stadtbezirk,Stadt,Land,Entfernung,Bars,Diskotheken,Kinos,Theater,Museeen"])
 
 for feature in hamburg_coords:
     # ERZEUGT STADTTEILNAMEN
@@ -46,8 +46,8 @@ for feature in hamburg_coords:
     skorna_array = koord_str.split(', ')
     skorna_array.append(entfernung)
     print(skorna_array) # Super krasses Array mit allen wichtigen Informationen, yo.
-    # add more shit, plox
-    # geht an dich, Streitmatter.
+    
+    # Einbauen: OpenStreetMap -- Bars, Diskotheken, etc. (mehrere Keywords)
 
     # CSV SCHREIBEN
     with open('skorna_datasafe.csv', 'a') as csv_file: # append
