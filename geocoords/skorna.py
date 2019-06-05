@@ -7,6 +7,7 @@ import re
 from geopy.geocoders import Nominatim
 from geopy import distance
 import csv
+import time
 
 geolocator = Nominatim(user_agent="KulturInHambung")
 
@@ -18,6 +19,8 @@ hamburg_coords = pygeoj.load("hamburg_city_districts.geojson")
 with open('skorna_datasafe.csv', 'w') as csv_file: # Datei anlegen
         writer = csv.writer(csv_file,lineterminator='\n')
         writer.writerow(["Stadtteil,Stadtbezirk,Stadt,Land,Entfernung,Bars,Diskotheken,Kinos,Theater,Museeen"])
+
+time.sleep(0.1) # Timeouthandling
 
 for feature in hamburg_coords:
     # ERZEUGT STADTTEILNAMEN
@@ -37,6 +40,8 @@ for feature in hamburg_coords:
     # You Either Code Properly, Or You Code Long Enough To See Yourself Become Hated By Everyone On Your Team
     print(koord_str) # print(koord)
 
+    #Timeouthandling
+    time.sleep(0.1)
     # DISTANZ VON GEOCODE ZU GEOCODE BERECHNEN
     entfernung = distance.distance(koord.point, hamburg_mitte).kilometers # Zahl im Bereich 0-20 sind Kilometer
     entfernung = (int(entfernung*100)/float(100))    # Runden, bruder.
@@ -54,6 +59,8 @@ for feature in hamburg_coords:
         writer = csv.writer(csv_file,lineterminator='\n')
         writer.writerow(skorna_array)
 
+    # Timeouthandling
+    time.sleep(0.25)
     # print(feature.geometry.type)
     # print(feature.geometry.coordinates)
     # print(feature.properties)
