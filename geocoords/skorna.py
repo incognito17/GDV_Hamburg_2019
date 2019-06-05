@@ -60,7 +60,7 @@ for feature in hamburg_coords:
     # - Wizard: admin_level=10
     # - Wizard: pubs or bars in Hamburg / "St. Pauli" etc.
     # - "@id": "relation/28931" --> 36000xxxxx / 3600028931 --> Python-Requests an Server/API stellen
-    # - 
+    # - Geo-Koordinaten ggf. auch aus Overpass ziehen oder GeoDatenJSON aus _polygon-Datei einbinden
 
     # CSV SCHREIBEN
     with open('skorna_datasafe.csv', 'a') as csv_file: # append
@@ -68,7 +68,7 @@ for feature in hamburg_coords:
         writer.writerow(skorna_array) # hier ggf. noch Darstellung anpassen
 
     # Timeouthandling
-    time.sleep(0.25)
+    time.sleep(0.25) 
     # print(feature.geometry.type)
     # print(feature.geometry.coordinates)
     # print(feature.properties)
