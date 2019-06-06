@@ -36,6 +36,7 @@ for feature in hamburg_coords:
     stadtteil = stadtteil.replace('Ã¶','ö')
     stadtteil = stadtteil.replace('Ã¤','ä')
     stadtteil = stadtteil.replace('ÃŸ','ß')
+    stadtteil = stadtteil.replace('.','. ') # St.Pauli / St.Georg --> St. Pauli  / St. Georg
     # print(stadtteil)
 
     # ERZEUGT STADTTEIL, STADTBEZIRK, STADT, LAND

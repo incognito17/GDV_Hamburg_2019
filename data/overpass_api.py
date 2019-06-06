@@ -194,6 +194,8 @@ def hamburg_POIs_count_fast ( keywordString , district ):
 
     # get district id to use in data
     district_id = 0
+    # district = district.replace('.','. ') # St.Pauli / St.Georg --> St. Pauli  / St. Georg
+    
     certain_district = "" # geojson-element
     with open("district_ids.geojson", "r") as districts_geojson:
         city_districts = geojson.load(districts_geojson)
