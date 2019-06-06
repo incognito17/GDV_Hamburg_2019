@@ -5,6 +5,7 @@ import pygeoj
 import re
 import requests
 import geojson
+import json
 
 def hamburg_POIs_count ( keywordString , district ):
     # keywordString =   " pubs or bars in "
@@ -162,8 +163,18 @@ def hamburg_POIs_count ( keywordString , district ):
     '''
 
     print(r.status_code)
-    print(r.text) # es werden Elemente ausgegeben. # Jetzt müssen die nur zusammengezählt werden.
 
+    if r.status_code != 200:
+        print("ERROR IN HTTP CODE: " + r.status_code + " at " + district)
+
+    # print(r.text)  
+    # es werden Elemente ausgegeben. # Jetzt müssen die nur zusammengezählt werden.
+
+    keyword_text = r.text
+    keyword_count = keyword_text.count('\"type\": \"node\",')
+
+    printcount = keyword_count
+    print("Keywords: " + keywords[0] + " etc. appear "+ str(printcount) + " times.")
     return keyword_count
 
 
@@ -196,3 +207,47 @@ def hamburg_POIs_count ( keywordString , district ):
     # - "@id": "relation/28931" --> 36000xxxxx / 3600028931 --> Python-Requests an Server/API stellen
     # - Geo-Koordinaten ggf. auch aus Overpass ziehen oder GeoDatenJSON aus _polygon-Datei einbinden
     # s.o.
+
+''''
+
+Elements --> type --> "node"
+
+200
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.55.7 8b86ff77",
+  "osm3s": {
+    "timestamp_osm_base": "2019-06-06T12:38:02Z",
+    "timestamp_areas_base": "2019-06-06T12:19:03Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+    {
+        "type": "node",
+        "id": 724276519,
+        "tags": {
+            "amenity": "pub",
+            "name": "Roxie"
+        }
+    },
+    {
+        "type": "node",
+        "id": 1926030069,
+        "tags": {
+            "amenity": "pub",
+            "name": "Heimbar"
+        }
+    },
+    {
+    "type": "way",
+    "id": 61414966,
+    "nodes": [ n ],
+    "tags": {
+        "amenity": "pub",
+        "name": "Roxie",
+    }
+    },
+  ]
+}
+'''
