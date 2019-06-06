@@ -1,16 +1,16 @@
 # Projektgruppe Hamburg, GDV SS19
 ## Was?
-Projekttitel:   `Vergnügungsviertel in Hamburg`\
-Aufgabe:        `Darstellung Zusammenhang zwischen Einkommen, Vergnügungsviertel und Entfernung zur Stadtmitte`\
-Fach:           `Grundlagen der Datenvisualisierung - Sommersemester 2019`\
-Institution:    `Hochschule Mannheim`\
+Projekttitel:&Tab;`Vergnügungsviertel in Hamburg`\
+Aufgabe:&Tab;&Tab;`Darstellung Zusammenhang zwischen Einkommen, Vergnügungsviertel und Entfernung zur Stadtmitte`\
+Fach:&Tab;&Tab;&Tab;`Grundlagen der Datenvisualisierung - Sommersemester 2019`\
+Institution:&Tab;`Hochschule Mannheim`
 
 ## Wer?
 ### Teammitglieder
-Michell Skorna          - Datenaufbereitung, Dokumentation\
-Sergej Kryvoruchko      - Grafische Oberfläche\
-Simon Karl              - Choroplethenkarte\
-Patrick Streitmatter    - Scatterplots
+Michell Skorna&Tab;&Tab;&Tab;- Datenaufbereitung, Dokumentation\
+Sergej Kryvoruchko&Tab;&Tab;- Grafische Oberfläche\
+Simon Karl&Tab;&Tab;&Tab;&Tab;- Choroplethenkarte\
+Patrick Streitmatter&Tab;- Scatterplots
 
 ### Dozent
 Prof. Dr. Till Nagel
