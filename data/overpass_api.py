@@ -41,10 +41,37 @@ def hamburg_POIs_count ( keywordString , district ):
         
         # Lese Ergebnisobjekt aus und mache zu einer Zahl, die für Request benötigt wird.
         district_id = str(district_id).replace('relation/','')
-        print(district_id)
+        print(district_id + " " + district)
         
     # see regular http request-response at api
-    payload = dict(data='') # requires appropiate payload
+
+# construct keys
+    keywords = [''] # initialize array
+    # append array here
+# if query len 0
+# if query len 1
+# if query len 2
+    query_request = ("[out:json][timeout:25];\r\n"
+                    "area(3600078938)->.searchArea;\r\n"
+                    "(\r\n"
+                    "  node[\"amenity\"=\""+ keywords[0] +"\"](area.searchArea);\r\n"
+                    "  way[\"amenity\"=\""+ keywords[0] +"\"](area.searchArea);\r\n"
+                    "  relation[\"amenity\"=\""+ keywords[0] +"\"](area.searchArea);\r\n"
+                    ""
+                    "  node[\"amenity\"=\""+ keywords[1] +"\"](area.searchArea);\r\n"
+                    "  way[\"amenity\"=\""+ keywords[1] +"\"](area.searchArea);\r\n"
+                    "  relation[\"amenity\"=\""+ keywords[1] +"\"](area.searchArea);\r\n"
+                    ");\r\n"
+                    "// print results\r\n"
+                    "out body;\r\n"
+                    ">;\r\n"
+                    "out skel qt;\r\n")
+#if query len 3
+#if query len 4 --> error
+
+###
+
+    payload = dict(data=query_request) # requires appropiate payload
     # r = requests.post('https://overpass-api.de/api/interpreter', data=payload)
 
     # Notiz:
