@@ -294,7 +294,7 @@ def hamburg_POIs_count_fast ( keywordString , district ):
     # es werden Elemente ausgegeben. # Jetzt müssen die nur zusammengezählt werden.
 
     # (POI_counts[0]) # bars
-    # (POI_counts[1]) # disco
+    # (POI_counts[1]) # nightclub (disco)
     # (POI_counts[2]) # cinema
     # (POI_counts[3]) # theatre
     # (POI_counts[4]) # museum
@@ -306,7 +306,7 @@ def hamburg_POIs_count_fast ( keywordString , district ):
     bars_and_pubs = keyword_text.count('\"amenity\": \"pub\",') + keyword_text.count('\"amenity\": \"bar\",')
     # Append Keyword_Count (Occurences) Array
     keyword_count.append(bars_and_pubs)
-    keyword_count.append(keyword_text.count('\"amenity\": \"disco\",'))
+    keyword_count.append(keyword_text.count('\"amenity\": \"nightclub\",'))
     keyword_count.append(keyword_text.count('\"amenity\": \"cinema\",'))
     keyword_count.append(keyword_text.count('\"amenity\": \"theatre\",'))
     keyword_count.append(keyword_text.count('\"amenity\": \"museum\",'))
