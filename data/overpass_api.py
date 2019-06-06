@@ -7,7 +7,7 @@ import requests
 import geojson
 import json
 import time
-
+'''
 def hamburg_POIs_count ( keywordString , district ):
     # keywordString =   " pubs or bars in "
     # district      =   " St. Pauli "
@@ -175,7 +175,7 @@ def hamburg_POIs_count ( keywordString , district ):
 
     requests.get('https://overpass-api.de/api/kill_my_queries')
     return keyword_count
-
+'''
 
 
 
@@ -202,6 +202,12 @@ def hamburg_POIs_count_fast ( keywordString , district ):
             if 'name' in current_district.properties:
                 # ERROR IN UMLAUTE!!!
                 searched_name = current_district.properties['name']
+
+                searched_name = searched_name.replace('Ã¼','ü')
+                searched_name = searched_name.replace('Ã¶','ö')
+                searched_name = searched_name.replace('Ã¤','ä')
+                searched_name = searched_name.replace('ÃŸ','ß')
+
                 if district == searched_name:
                     certain_district = current_district
                     district_id = certain_district.id

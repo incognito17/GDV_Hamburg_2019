@@ -1,5 +1,5 @@
 Stadtteil,Stadtbezirk,Stadt,Land,Entfernung,Bars,Diskotheken,Kinos,Theater,Museeen
-Allermöhe,Bergedorf,Hamburg,Deutschland,11.09,0,0,0,0,0
+AllermÃ¶he,Bergedorf,Hamburg,Deutschland,11.09,1,0,0,0,0
 Alsterdorf,Hamburg-Nord,Hamburg,Deutschland,6.7,3,0,0,0,0
 Altengamme,Bergedorf,Hamburg,Deutschland,22.5,1,0,0,0,0
 Altenwerder,Harburg,Hamburg,Deutschland,7.34,0,0,0,0,0
@@ -7,5 +7,7 @@ Altona-Altstadt,Altona,Hamburg,Deutschland,3.66,17,0,1,5,0
 Altona-Nord,Altona,Hamburg,Deutschland,3.9,9,0,0,1,0
 Bahrenfeld,Altona,Hamburg,Deutschland,6.63,8,0,0,2,0
 Barmbek-Nord,Hamburg-Nord,Hamburg,Deutschland,6.25,16,0,0,1,0
-Barmbek-Süd,Hamburg-Nord,Hamburg,Deutschland,4.33,0,0,0,0,0
+Barmbek-SÃ¼d,Hamburg-Nord,Hamburg,Deutschland,4.33,13,0,2,3,0
 Bergedorf,Hamburg,Deutschland,16.62,3,0,0,2,0
+Bergstedt,Wandsbek,Hamburg,Deutschland,16.04,0,0,0,0,0
+Billbrook,Hamburg-Mitte,Hamburg,Deutschland,6.25,0,0,0,0,0

@@ -19,7 +19,7 @@ hamburg_mitte = hamburg_mitte_geocode.point
 
 hamburg_coords = pygeoj.load("hamburg_city_districts.geojson")
 
-with open('skorna_datasafe.csv', 'w') as csv_file: # Datei anlegen
+with open('skorna_datasafe.csv', 'w', encoding='utf-8') as csv_file: # Datei anlegen
         writer = csv.writer(csv_file,lineterminator='\n')
         writer.writerow(["Stadtteil","Stadtbezirk","Stadt","Land","Entfernung","Bars","Diskotheken","Kinos","Theater","Museeen"])
 
@@ -60,6 +60,11 @@ for feature in hamburg_coords:
     skorna_array.append(entfernung)
     print(skorna_array) # Super krasses Array mit allen wichtigen Informationen, yo.
 
+    if len(skorna_array) > 5:
+            print("Removed: "+skorna_array[2])
+            del skorna_array[2]
+            print(skorna_array)
+
     # ERZEUGT POINTS OF INTERESTS
     print("\r\n##### NOW PROCESSING: " + stadtteil + " #####\r\n")
     # count them up in hamburg_POIs_count, assign them integers
@@ -98,7 +103,7 @@ for feature in hamburg_coords:
     # - "@id": "relation/28931" --> 36000xxxxx / 3600028931 --> Python-Requests an Server/API stellen
 
     # CSV SCHREIBEN
-    with open('skorna_datasafe.csv', 'a') as csv_file: # append
+    with open('skorna_datasafe.csv', 'a', encoding='utf-8') as csv_file: # append
         writer = csv.writer(csv_file,lineterminator='\n',delimiter=",")
         writer.writerow(skorna_array) # hier ggf. noch Darstellung anpassen
 
