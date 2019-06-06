@@ -123,8 +123,10 @@ for feature in hamburg_coords:
 # For-Loop-End
 complete_end_time = time.time()
 complete_time_taken = complete_end_time - complete_start_time
-complete_time_taken = ((complete_time_taken/60)/60)
-complete_time_taken = (int(complete_time_taken*100)/float(100)) 
+complete_time_taken_min = (complete_time_taken/60)
+complete_time_taken_min_round = (int(complete_time_taken_min*100)/float(100))
+complete_time_taken_h = (complete_time_taken_min/60)
+complete_time_taken_h_round = (int(complete_time_taken_h*100)/float(100))
 print("\r\n############")
-print("COMPLETED AFTER: "+str(complete_time_taken)+" HOURS.")
+print("COMPLETED AFTER: "+str(complete_time_taken_h_round)+" HOURS. ("+complete_time_taken_min_round+" MINUTES.)")
 print("############")
