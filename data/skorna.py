@@ -12,11 +12,12 @@ import overpass_api as opi
 
 geolocator = Nominatim(user_agent="KulturInHambung")
 
+complete_start_time = time.time()
+
 hamburg_mitte_geocode = geolocator.geocode("Hamburg")
 hamburg_mitte = hamburg_mitte_geocode.point
 
 hamburg_coords = pygeoj.load("hamburg_city_districts.geojson")
-
 
 with open('skorna_datasafe.csv', 'w') as csv_file: # Datei anlegen
         writer = csv.writer(csv_file,lineterminator='\n')
@@ -25,6 +26,9 @@ with open('skorna_datasafe.csv', 'w') as csv_file: # Datei anlegen
 time.sleep(0.1) # Timeouthandling
 
 for feature in hamburg_coords:
+    # Debug-Time-Measurement
+    startzeit = time.time() # returns time in seconds
+
     # ERZEUGT STADTTEILNAMEN
     property_stadtteil = str(feature.properties).split(': ')
     stadtteil = re.sub('[:\'}]', '', property_stadtteil[1])
@@ -36,6 +40,7 @@ for feature in hamburg_coords:
 
     # ERZEUGT STADTTEIL, STADTBEZIRK, STADT, LAND
     koord = geolocator.geocode(stadtteil + ", Hamburg")
+    time.sleep(0.1) #Timeouthandling
     koord_plz = koord
     koord_plz = re.sub('[0-9]','',str(koord_plz))
     koord_str = koord_plz.replace(' ,','')
@@ -56,8 +61,11 @@ for feature in hamburg_coords:
     print(skorna_array) # Super krasses Array mit allen wichtigen Informationen, yo.
 
     # ERZEUGT POINTS OF INTERESTS
-    print(stadtteil)
+    print("\r\n##### NOW PROCESSING: " + stadtteil + " #####\r\n")
     # count them up in hamburg_POIs_count, assign them integers
+    '''
+    ### Laufzeit 7.5 bis 15 Stunden! Nicht optimal!
+    ### Ggf.: Lieber Query-Anfrage in overpass_api.py verändern.
     bar_count = opi.hamburg_POIs_count("bar or pub in ", stadtteil)
     disco_count = opi.hamburg_POIs_count("nightclub in ", stadtteil)
     cinema_count = opi.hamburg_POIs_count("cinema in ", stadtteil)
@@ -70,7 +78,18 @@ for feature in hamburg_coords:
     skorna_array.append(cinema_count)
     skorna_array.append(theatre_count)
     skorna_array.append(museum_count)
-    
+    '''
+
+    # Reduzierung Laufzeit auf 2-4 Stunden.
+    # Bitte _fast benutzen.
+
+    POI_counts = opi.hamburg_POIs_count_fast("bar or pub or nightclub or cinema or theatre or museum in ", stadtteil) 
+    skorna_array.append(POI_counts[0]) # bars
+    skorna_array.append(POI_counts[1]) # disco
+    skorna_array.append(POI_counts[2]) # cinema
+    skorna_array.append(POI_counts[3]) # theatre
+    skorna_array.append(POI_counts[4]) # museum
+
     # Einbauen: Overpass-Turbo -- Bars, Diskotheken, etc. (mehrere Keywords)
     # OverPass-Turbo:
     # - Wizard: admin_level=10
@@ -82,8 +101,23 @@ for feature in hamburg_coords:
         writer = csv.writer(csv_file,lineterminator='\n',delimiter=",")
         writer.writerow(skorna_array) # hier ggf. noch Darstellung anpassen
 
-    # Timeouthandling
-    time.sleep(0.25) 
+    # Zeitinfo
+    endzeit = time.time()
+    process_time = endzeit - startzeit
+    process_time = (int(process_time*100)/float(100)) 
+    print("\r\n##### FINISHED AFTER: "+str(process_time)+" SECONDS #####")
+    print("##### MOVING TO NEXT CITY DISTRICT #####\r\n")
+
+    time.sleep(0.25) # Timeouthandling
     # print(feature.geometry.type)
     # print(feature.geometry.coordinates)
     # print(feature.properties)
+
+# For-Loop-End
+complete_end_time = time.time()
+complete_time_taken = complete_end_time - complete_start_time
+complete_time_taken = ((complete_time_taken/60)/60)
+complete_time_taken = (int(complete_time_taken*100)/float(100)) 
+print("\r\n############")
+print("COMPLETED AFTER: "+str(complete_time_taken)+" HOURS.")
+print("############")
