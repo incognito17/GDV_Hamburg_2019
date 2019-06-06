@@ -58,11 +58,11 @@ for feature in hamburg_coords:
     # ERZEUGT POINTS OF INTERESTS
     print(stadtteil)
     # count them up in hamburg_POIs_count, assign them integers
-    bar_count = opi.hamburg_POIs_count("bars or pubs in ", stadtteil)
-    disco_count = opi.hamburg_POIs_count("discos or discotheques or disco or discotheque in ", stadtteil)
-    cinema_count = opi.hamburg_POIs_count("cinema or cinemas or movie or movies in ", stadtteil)
-    theatre_count = opi.hamburg_POIs_count("theaters or theatre or theater or theatres in ", stadtteil)
-    museum_count = opi.hamburg_POIs_count("museum or museums or artexhibition in ", stadtteil)
+    bar_count = opi.hamburg_POIs_count("bar or pub in ", stadtteil)
+    disco_count = opi.hamburg_POIs_count("nightclub in ", stadtteil)
+    cinema_count = opi.hamburg_POIs_count("cinema in ", stadtteil)
+    theatre_count = opi.hamburg_POIs_count("theatre in ", stadtteil)
+    museum_count = opi.hamburg_POIs_count("museum in ", stadtteil)
 
     # Reihenfolge wie oben:
     skorna_array.append(bar_count)

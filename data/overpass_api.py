@@ -27,6 +27,7 @@ def hamburg_POIs_count ( keywordString , district ):
             # print(current_district.keys()) # dict_keys(['type', 'id', 'geometry', 'properties'])
             # print(current_district.properties['name']) # alter falter wie lange ich für diese scheiß eine zeile gebraucht und gerätselt habe das glaubt ihr echt nicht einfach nur wtf.
             if 'name' in current_district.properties:
+                # ERROR IN UMLAUTE!!!
                 searched_name = current_district.properties['name']
                 if district == searched_name:
                     certain_district = current_district
@@ -43,36 +44,112 @@ def hamburg_POIs_count ( keywordString , district ):
         district_id = str(district_id).replace('relation/','')
         print(district_id + " " + district)
         
-    # see regular http request-response at api
-
-# construct keys
+    # construct keys
     keywords = [''] # initialize array
-    # append array here
-# if query len 0
-# if query len 1
-# if query len 2
-    query_request = ("[out:json][timeout:25];\r\n"
-                    "area(3600078938)->.searchArea;\r\n"
-                    "(\r\n"
-                    "  node[\"amenity\"=\""+ keywords[0] +"\"](area.searchArea);\r\n"
-                    "  way[\"amenity\"=\""+ keywords[0] +"\"](area.searchArea);\r\n"
-                    "  relation[\"amenity\"=\""+ keywords[0] +"\"](area.searchArea);\r\n"
-                    ""
-                    "  node[\"amenity\"=\""+ keywords[1] +"\"](area.searchArea);\r\n"
-                    "  way[\"amenity\"=\""+ keywords[1] +"\"](area.searchArea);\r\n"
-                    "  relation[\"amenity\"=\""+ keywords[1] +"\"](area.searchArea);\r\n"
-                    ");\r\n"
-                    "// print results\r\n"
-                    "out body;\r\n"
-                    ">;\r\n"
-                    "out skel qt;\r\n")
-#if query len 3
-#if query len 4 --> error
+    query_request = ""
 
+    keywordString = keywordString.replace(' in ','')
+    keywords = keywordString.split(' or ')
+    print(keywords)
+
+    areacode = 3600000000 # len(areacode) --> 10
+    district_id_int = int(district_id)
+    areacode += district_id_int # Sag was de willst, aber das ist clever, ne?
+    areacode = str(areacode)
+
+    # if query len 0
+    if len(keywords) == 0:
+        print("NO KEYWORDS FOUND!")
+        quit()
+    # if query len 1
+    if len(keywords) == 1:
+        print("One Keyword found -- Watch out for alternatives!")
+        query_request = ("[out:json][timeout:25];\r\n"
+                        "area("+areacode+")->.searchArea;\r\n"
+                        "// Hochschule Mannheim, GDV-Lecture: Project Hamburg\r\n"
+                        "(\r\n"
+                        "  node[\"amenity\"=\""+ keywords[0] +"\"](area.searchArea);\r\n"
+                        "  way[\"amenity\"=\""+ keywords[0] +"\"](area.searchArea);\r\n"
+                        "  relation[\"amenity\"=\""+ keywords[0] +"\"](area.searchArea);\r\n"
+                        ");\r\n"
+                        "// print results\r\n"
+                        "out body;\r\n"
+                        ">;\r\n"
+                        "out skel qt;\r\n")
+    # if query len 2
+    if len(keywords) == 2:
+        query_request = ("[out:json][timeout:25];\r\n"
+                        "area("+areacode+")->.searchArea;\r\n"
+                        "// Hochschule Mannheim, GDV-Lecture: Project Hamburg\r\n"
+                        "(\r\n"
+                        "  node[\"amenity\"=\""+ keywords[0] +"\"](area.searchArea);\r\n"
+                        "  way[\"amenity\"=\""+ keywords[0] +"\"](area.searchArea);\r\n"
+                        "  relation[\"amenity\"=\""+ keywords[0] +"\"](area.searchArea);\r\n"
+                        ""
+                        "  node[\"amenity\"=\""+ keywords[1] +"\"](area.searchArea);\r\n"
+                        "  way[\"amenity\"=\""+ keywords[1] +"\"](area.searchArea);\r\n"
+                        "  relation[\"amenity\"=\""+ keywords[1] +"\"](area.searchArea);\r\n"
+                        ");\r\n"
+                        "// print results\r\n"
+                        "out body;\r\n"
+                        ">;\r\n"
+                        "out skel qt;\r\n")
+    #if query len 3
+    if len(keywords) == 3:
+        query_request = ("[out:json][timeout:25];\r\n"
+                        "area("+areacode+")->.searchArea;\r\n"
+                        "// Hochschule Mannheim, GDV-Lecture: Project Hamburg\r\n"
+                        "(\r\n"
+                        "  node[\"amenity\"=\""+ keywords[0] +"\"](area.searchArea);\r\n"
+                        "  way[\"amenity\"=\""+ keywords[0] +"\"](area.searchArea);\r\n"
+                        "  relation[\"amenity\"=\""+ keywords[0] +"\"](area.searchArea);\r\n"
+                        ""
+                        "  node[\"amenity\"=\""+ keywords[1] +"\"](area.searchArea);\r\n"
+                        "  way[\"amenity\"=\""+ keywords[1] +"\"](area.searchArea);\r\n"
+                        "  relation[\"amenity\"=\""+ keywords[1] +"\"](area.searchArea);\r\n"
+                        ""
+                        "  node[\"amenity\"=\""+ keywords[2] +"\"](area.searchArea);\r\n"
+                        "  way[\"amenity\"=\""+ keywords[2] +"\"](area.searchArea);\r\n"
+                        "  relation[\"amenity\"=\""+ keywords[2] +"\"](area.searchArea);\r\n"
+                        ");\r\n"
+                        "// print results\r\n"
+                        "out body;\r\n"
+                        ">;\r\n"
+                        "out skel qt;\r\n")
+    #if query len 4
+    if len(keywords) == 4:
+        query_request = ("[out:json][timeout:25];\r\n"
+                        "area("+areacode+")->.searchArea;\r\n"
+                        "// Hochschule Mannheim, GDV-Lecture: Project Hamburg\r\n"
+                        "(\r\n"
+                        "  node[\"amenity\"=\""+ keywords[0] +"\"](area.searchArea);\r\n"
+                        "  way[\"amenity\"=\""+ keywords[0] +"\"](area.searchArea);\r\n"
+                        "  relation[\"amenity\"=\""+ keywords[0] +"\"](area.searchArea);\r\n"
+                        ""
+                        "  node[\"amenity\"=\""+ keywords[1] +"\"](area.searchArea);\r\n"
+                        "  way[\"amenity\"=\""+ keywords[1] +"\"](area.searchArea);\r\n"
+                        "  relation[\"amenity\"=\""+ keywords[1] +"\"](area.searchArea);\r\n"
+                        ""
+                        "  node[\"amenity\"=\""+ keywords[2] +"\"](area.searchArea);\r\n"
+                        "  way[\"amenity\"=\""+ keywords[2] +"\"](area.searchArea);\r\n"
+                        "  relation[\"amenity\"=\""+ keywords[2] +"\"](area.searchArea);\r\n"
+                        ""
+                        "  node[\"amenity\"=\""+ keywords[3] +"\"](area.searchArea);\r\n"
+                        "  way[\"amenity\"=\""+ keywords[3] +"\"](area.searchArea);\r\n"
+                        "  relation[\"amenity\"=\""+ keywords[3] +"\"](area.searchArea);\r\n"
+                        ");\r\n"
+                        "// print results\r\n"
+                        "out body;\r\n"
+                        ">;\r\n"
+                        "out skel qt;\r\n")
+    #if query len 5 --> error
+    if len(keywords) == 5:
+        print("Five Keywords? Please don't. It's getting tedious to implement.")
+        quit()
 ###
 
     payload = dict(data=query_request) # requires appropiate payload
-    # r = requests.post('https://overpass-api.de/api/interpreter', data=payload)
+    r = requests.post('https://overpass-api.de/api/interpreter', data=payload)
 
     # Notiz:
     '''
@@ -84,10 +161,13 @@ def hamburg_POIs_count ( keywordString , district ):
 
     '''
 
-    # print(r.status_code)
+    print(r.status_code)
+    print(r.text) # es werden Elemente ausgegeben. # Jetzt müssen die nur zusammengezählt werden.
 
     return keyword_count
 
+
+#####################################################
 #POST:
 #
 #   >>> payload = dict(key1='value1', key2='value2')
