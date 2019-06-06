@@ -262,7 +262,7 @@ def hamburg_POIs_count_fast ( keywordString , district ):
                         ">;\r\n"
                         "out skel qt;\r\n")
 ###
-
+    time.sleep(0.2)
     payload = dict(data=query_request) # requires appropiate payload
     time.sleep(12) # HTTP 429 Avoidance Clause. --> https://overpass-api.de/api/status
     # maximum required sleep on its own:        90 sec
@@ -272,7 +272,7 @@ def hamburg_POIs_count_fast ( keywordString , district ):
 
     r = requests.post('https://overpass-api.de/api/interpreter', data=payload)
 
-    time.sleep(0.1) #Timeouthandling
+    time.sleep(0.25) #Timeouthandling
 
     print(r.status_code)
 

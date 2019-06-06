@@ -82,8 +82,9 @@ for feature in hamburg_coords:
 
     # Reduzierung Laufzeit auf 2-4 Stunden.
     # Bitte _fast benutzen.
-
+    time.sleep(1)
     POI_counts = opi.hamburg_POIs_count_fast("bar or pub or nightclub or cinema or theatre or museum in ", stadtteil) 
+    time.sleep(1)
     skorna_array.append(POI_counts[0]) # bars
     skorna_array.append(POI_counts[1]) # disco
     skorna_array.append(POI_counts[2]) # cinema
