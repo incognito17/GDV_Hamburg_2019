@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Vergn&uuml;gungsviertel in Hamburg</title>
+
+    <script>
+        weekday = false;
+        function wednesday(){
+            if(!weekday){
+                document.getElementById("wednesday").innerHTML = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH!!!";
+                weekday = !weekday;
+            }
+            else{
+                document.getElementById("wednesday").innerHTML = "It's Wednesday, my dudes!";
+                weekday = !weekday;
+            }
+        }    
+    </script>
+
+    <script src="choroplethenkarte_template.js"></script>
+    <script src="scatterplot_template.js"></script>
+</head>
+<body>
+
+    <h1>Vergnügungsviertel in Hamburg</h1>
+    <p id="wednesday" onclick="wednesday()">
+        It's Wednesday, my dudes!
+    </p>
+
+</body>
+</html>
