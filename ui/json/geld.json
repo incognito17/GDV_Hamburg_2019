@@ -113,7 +113,7 @@
   },
   "28": {
     "name": "Blankenese",
-    "geldn": 117139
+    "geld": 117139
   },
   "29": {
     "name": "Iserbrook",
@@ -352,7 +352,7 @@
     "geld": 32295
   },
   "97": {
-    "name": "GutMoor",
+    "name": "GutMoorNord",
     "geld": 32295
   },
   "98": {
@@ -410,5 +410,9 @@
   "111": {
     "name": "Cranz",
     "geld": 31335
+  },
+  "112": {
+    "name": "GutMoorSüd",
+    "geld": 32295
   }
 }
