@@ -1,0 +1,126 @@
+{
+  "0": {
+    "name": "HamburgAltstadt",
+    "geld": 31336
+  },
+  "1": {
+    "name": "HafenCity",
+    "geld": 93206
+  },
+  "2": {
+    "name": "Neustadt",
+    "geld": 34521
+  },
+  "3": {
+    "name": "StPauli",
+    "geld": 27977
+  },
+  "4": {
+    "name": "StGeorg",
+    "geld": 44121
+  },
+  "5": {
+    "name": "Hammerbrook",
+    "geld": 19468
+  },
+  "6": {
+    "name": "Borgfelde",
+    "geld": 26217
+  },
+  "7": {
+    "name": "Hamm",
+    "geld": 25745
+  },
+  "8": {
+    "name": "Horn",
+    "geld": 21685
+  },
+  "9": {
+    "name": "Billstedt",
+    "geld": 23247
+  },
+  "10": {
+    "name": "Billbrook",
+    "geld": 22625
+  },
+  "11": {
+    "name": "Rothenburgsort",
+    "geld": 20473
+  },
+  "12": {
+    "name": "Veddel",
+    "geld": 15831
+  },
+  "13": {
+    "name": "Wilhelmsburg",
+    "geld": 21890
+  },
+  "14": {
+    "name": "KleinerGrasbrook",
+    "geld": 13777
+  },
+  "15": {
+    "name": "Steinwerder",
+    "geld": 13777
+  },
+  "16": {
+    "name": "Waltershof",
+    "geld": 31649
+  },
+  "17": {
+    "name": "Finkenwerder",
+    "geld": 31649
+  },
+  "18": {
+    "name": "AltonaAltstadt",
+    "geld": 30833
+  },
+  "19": {
+    "name": "Sternschanze",
+    "geld": 31125
+  },
+  "20": {
+    "name": "AltonaNord",
+    "geld": 29901
+  },
+  "21": {
+    "name": "Ottensen",
+    "geld": 40830
+  },
+  "22": {
+    "name": "Bahrenfeld",
+    "geld": 33565
+  },
+  "23": {
+    "name": "GrossFlottbek",
+    "geld": 85952
+  },
+  "24": {
+    "name": "Othmarschen",
+    "geld": 108258
+  },
+  "25": {
+    "name": "Lurup",
+    "geld": 26665
+  },
+  "26": {
+    "name": "Osdorf",
+    "geld": 43177
+  },
+  "27": {
+    "name": "Nienstedten",
+    "geld": 120716
+  },
+  "28": {
+    "name": "Blankenese",
+    "geld": 117139
+  },
+  "29": {
+    "name": "Iserbrook",
+    "geld": 39439
+  },
+  "30": {
+    "name": "Sülldorf",
+    "geld": 43584
+  }
+}
