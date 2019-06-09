@@ -113,7 +113,7 @@
   },
   "28": {
     "name": "Blankenese",
-    "geld": 117139
+    "geldn": 117139
   },
   "29": {
     "name": "Iserbrook",
@@ -122,5 +122,293 @@
   "30": {
     "name": "Sülldorf",
     "geld": 43584
+  },
+  "31": {
+    "name": "Rissen",
+    "geld": 65855
+  },
+  "32": {
+    "name": "Eimsbüttel",
+    "geld": 37536
+  },
+  "33": {
+    "name": "Rotherbaum",
+    "geld": 68191
+  },
+  "34": {
+    "name": "Harvestehude",
+    "geld": 111088
+  },
+  "35": {
+    "name": "HoheluftWest",
+    "geld": 42169
+  },
+  "36": {
+    "name": "Lokstedt",
+    "geld": 41778
+  },
+  "37": {
+    "name": "Niendorf",
+    "geld": 41651
+  },
+  "38": {
+    "name": "Schnelsen",
+    "geld": 37866
+  },
+  "39": {
+    "name": "Eidelstedt",
+    "geld": 30938
+  },
+  "40": {
+    "name": "Stellingen",
+    "geld": 32600
+  },
+  "41": {
+    "name": "HoheluftOst",
+    "geld": 52006
+  },
+  "42": {
+    "name": "Eppendorf",
+    "geld": 58438
+  },
+  "43": {
+    "name": "GrossBorstel",
+    "geld": 42631
+  },
+  "44": {
+    "name": "Alsterdorf",
+    "geld": 52426
+  },
+  "45": {
+    "name": "Winterhude",
+    "geld": 51627
+  },
+  "46": {
+    "name": "Uhlenhorst",
+    "geld": 62479
+  },
+  "47": {
+    "name": "Hohenfelde",
+    "geld": 39541
+  },
+  "48": {
+    "name": "BarmbekSued",
+    "geld": 32679
+  },
+  "49": {
+    "name": "Dulsberg",
+    "geld": 21239
+  },
+  "50": {
+    "name": "BarmbekNord",
+    "geld": 28330
+  },
+  "51": {
+    "name": "Ohlsdorf",
+    "geld": 39049
+  },
+  "52": {
+    "name": "Fuhlsbüttel",
+    "geld": 39526
+  },
+  "53": {
+    "name": "Langenhorn",
+    "geld": 30965
+  },
+  "54": {
+    "name": "Eilbek",
+    "geld": 32559
+  },
+  "55": {
+    "name": "Wandsbek",
+    "geld": 28567
+  },
+  "56": {
+    "name": "Marienthal",
+    "geld": 59131
+  },
+  "57": {
+    "name": "Jenfeld",
+    "geld": 23975
+  },
+  "58": {
+    "name": "Tonndorf",
+    "geld": 32210
+  },
+  "59": {
+    "name": "FarmsenBerne",
+    "geld": 31603
+  },
+  "69": {
+    "name": "Bramfeld",
+    "geld": 30928
+  },
+  "70": {
+    "name": "Steilshoop",
+    "geld": 22730
+  },
+  "71": {
+    "name": "Wellingsbüttel",
+    "geld": 88606
+  },
+  "72": {
+    "name": "Sasel",
+    "geld": 61360
+  },
+  "73": {
+    "name": "Poppenbüttel",
+    "geld": 52157
+  },
+  "74": {
+    "name": "Hummelsbüttel",
+    "geld": 38135
+  },
+  "75": {
+    "name": "LemsahlMellingstedt",
+    "geld": 75191
+  },
+  "76": {
+    "name": "Duvenstedt",
+    "geld": 65694
+  },
+  "77": {
+    "name": "WohldorfOhlstedt",
+    "geld": 94234
+  },
+  "78": {
+    "name": "Bergstedt",
+    "geld": 51374
+  },
+  "79": {
+    "name": "Volksdorf",
+    "geld": 63763
+  },
+  "80": {
+    "name": "Rahlstedt",
+    "geld": 33419
+  },
+  "81": {
+    "name": "Lohbruegge",
+    "geld": 29127
+  },
+  "82": {
+    "name": "Bergedorf",
+    "geld": 35049
+  },
+  "83": {
+    "name": "Curslack",
+    "geld": 41512
+  },
+  "84": {
+    "name": "Altengamme",
+    "geld": 47341
+  },
+  "85": {
+    "name": "Neuengamme",
+    "geld": 40936
+  },
+  "86": {
+    "name": "Kirchwerder",
+    "geld": 39284
+  },
+  "87": {
+    "name": "Ochsenwerder",
+    "geld": 38634
+  },
+  "88": {
+    "name": "Reitbrook",
+    "geld": 37041
+  },
+  "89": {
+    "name": "Allermöhe",
+    "geld": 38369
+  },
+  "90": {
+    "name": "Billwerder",
+    "geld": 30575
+  },
+  "91": {
+    "name": "Moorfleet",
+    "geld": 34387
+  },
+  "92": {
+    "name": "Tatenberg",
+    "geld": 42598
+  },
+  "93": {
+    "name": "Spadenland",
+    "geld": 35255
+  },
+  "94": {
+    "name": "Neuallermöhe",
+    "geld": 28633
+  },
+  "95": {
+    "name": "Harburg",
+    "geld": 20773
+  },
+  "96": {
+    "name": "Neuland",
+    "geld": 32295
+  },
+  "97": {
+    "name": "GutMoor",
+    "geld": 32295
+  },
+  "98": {
+    "name": "Wilstorf",
+    "geld": 25518
+  },
+  "99": {
+    "name": "Rönneburg",
+    "geld": 38848
+  },
+  "100": {
+    "name": "Langenbek",
+    "geld": 34231
+  },
+  "101": {
+    "name": "Sinstorf",
+    "geld": 33328
+  },
+  "102": {
+    "name": "Marmstorf",
+    "geld": 36313
+  },
+  "103": {
+    "name": "Eissendorf",
+    "geld": 32988
+  },
+  "104": {
+    "name": "Heimfeld",
+    "geld": 30132
+  },
+  "105": {
+    "name": "Moorburg",
+    "geld": 34544
+  },
+  "106": {
+    "name": "Altenwerder",
+    "geld": 34544
+  },
+  "107": {
+    "name": "Hausbruch",
+    "geld": 31023
+  },
+  "108": {
+    "name": "NeugrabenFischbek",
+    "geld": 31101
+  },
+  "109": {
+    "name": "Francop",
+    "geld": 35782
+  },
+  "110": {
+    "name": "Neuenfelde",
+    "geld": 32879
+  },
+  "111": {
+    "name": "Cranz",
+    "geld": 31335
   }
 }
