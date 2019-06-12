@@ -78,7 +78,7 @@ d3.csv('../data/hamburg_einkommen.csv', function (data) {
         .attr('x',w)
         .attr('dy','.71em')
         .style('text-anchor','end')
-        .text('Annualized Standard Deviation')
+        .text('Stadtteile')
     // Y-axis
     svg.append('g')
         .attr('class', 'axis')
@@ -90,5 +90,5 @@ d3.csv('../data/hamburg_einkommen.csv', function (data) {
         .attr('y',5)
         .attr('dy','.71em')
         .style('text-anchor','end')
-        .text('Annualized Return')
+        .text('Einkommen je Steuerpflichtigen')
   })
