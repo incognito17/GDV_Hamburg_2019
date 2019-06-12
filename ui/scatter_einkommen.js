@@ -1,5 +1,5 @@
 // https://gist.github.com/jfreels/6816504
-d3.csv('../data/hamburg_einkommen.csv', function (data) {
+d3.csv('refactor_pls.csv', function (data) {
     // Variables
     var body = d3.select('body')
       var margin = { top: 50, right: 50, bottom: 50, left: 50 }
