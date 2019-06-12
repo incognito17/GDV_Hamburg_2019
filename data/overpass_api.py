@@ -309,7 +309,7 @@ def hamburg_POIs_count_fast ( keywordString , district ):
     keyword_count.append(keyword_text.count('\"amenity\": \"nightclub\",'))
     keyword_count.append(keyword_text.count('\"amenity\": \"cinema\",'))
     keyword_count.append(keyword_text.count('\"amenity\": \"theatre\",'))
-    keyword_count.append(keyword_text.count('\"amenity\": \"museum\",'))
+    keyword_count.append(keyword_text.count('\"tourism\": \"museum\",'))
     
     printcount = keyword_count
     print("Keywords appear:")
