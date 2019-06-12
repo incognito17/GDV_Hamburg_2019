@@ -1,4 +1,4 @@
-Stadtteil,Stadtbezirk,Stadt,Land,Entfernung,Bars,Diskotheken,Kinos,Theater,Museeen
+Stadtteil,Stadtbezirk,Stadt,Land,Entfernung,Bars,Diskotheken,Kinos,Theater,Museen
 Allermöhe,Bergedorf,Hamburg,Deutschland,11.09,1,0,0,0,0
 Alsterdorf,Hamburg-Nord,Hamburg,Deutschland,6.7,3,0,0,0,0
 Altengamme,Bergedorf,Hamburg,Deutschland,22.5,1,0,0,0,0
@@ -8,7 +8,7 @@ Altona-Nord,Altona,Hamburg,Deutschland,3.9,9,4,0,1,0
 Bahrenfeld,Altona,Hamburg,Deutschland,6.63,8,0,0,2,1
 Barmbek-Nord,Hamburg-Nord,Hamburg,Deutschland,6.25,16,0,0,1,0
 Barmbek-Süd,Hamburg-Nord,Hamburg,Deutschland,4.33,13,0,2,3,0
-Bergedorf,Hamburg,Deutschland,16.62,3,1,0,2,0
+Bergedorf,Hamburg,Deutschland,16.62,3,1,0,2,0,
 Bergstedt,Wandsbek,Hamburg,Deutschland,16.04,0,0,0,0,0
 Billbrook,Hamburg-Mitte,Hamburg,Deutschland,6.25,0,0,0,0,0
 Billstedt,Hamburg-Mitte,Hamburg,Deutschland,8.08,11,0,0,0,0
@@ -22,7 +22,7 @@ Dulsberg,Hamburg-Nord,Hamburg,Deutschland,5.46,7,0,0,0,1
 Duvenstedt,Wandsbek,Hamburg,Deutschland,18.58,1,0,0,0,0
 Eidelstedt,Eimsbüttel,Hamburg,Deutschland,8.26,5,0,0,0,1
 Eilbek,Wandsbek,Hamburg,Deutschland,3.5,11,1,0,0,0
-Eimsbüttel,Hamburg,Deutschland,4.15,38,0,1,2,0
+Eimsbüttel,Hamburg,Deutschland,4.15,38,0,1,2,0,
 Eißendorf,Harburg,Hamburg,Deutschland,11.67,1,0,0,0,0
 Eppendorf,Hamburg-Nord,Hamburg,Deutschland,4.54,5,0,0,0,3
 Farmsen-Berne,Wandsbek,Hamburg,Deutschland,9.94,1,0,0,0,0
@@ -36,7 +36,7 @@ HafenCity,Hamburg-Mitte,Hamburg,Deutschland,0.88,3,0,1,1,11
 Hamburg-Altstadt,Hamburg-Mitte,Hamburg,Deutschland,0.18,13,1,1,0,4
 Hamm,Hamburg-Mitte,Hamburg,Deutschland,3.37,8,1,0,0,1
 Hammerbrook,Hamburg-Mitte,Hamburg,Deutschland,1.76,3,2,0,0,3
-Harburg,Hamburg,Deutschland,10.73,26,1,1,0,3
+Harburg,Hamburg,Deutschland,10.73,26,1,1,0,3,
 Harvestehude,Eimsbüttel,Hamburg,Deutschland,3.09,4,0,1,1,1
 Hausbruch,Harburg,Hamburg,Deutschland,11.87,1,0,0,0,0
 Heimfeld,Harburg,Hamburg,Deutschland,10.31,4,0,0,0,0
@@ -65,7 +65,7 @@ Neuengamme,Bergedorf,Hamburg,Deutschland,19.5,1,0,0,0,2
 Neugraben-Fischbek,Harburg,Hamburg,Deutschland,13.49,3,0,0,0,0
 Neuland,Harburg,Hamburg,Deutschland,9.45,0,0,0,0,0
 Neustadt,Hamburg-Mitte,Hamburg,Deutschland,1.43,33,1,1,8,4
-Neuwerk,Hamburg,Deutschland,107.16,0,0,0,0,0
+Neuwerk,Hamburg,Deutschland,107.16,0,0,0,0,0,
 Niendorf,Eimsbüttel,Hamburg,Deutschland,9.18,5,0,0,0,0
 Nienstedten,Altona,Hamburg,Deutschland,10.36,2,0,0,0,0
 Ochsenwerder,Bergedorf,Hamburg,Deutschland,9.91,0,0,0,0,0

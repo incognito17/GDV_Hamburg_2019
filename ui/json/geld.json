@@ -1,6 +1,6 @@
 {
   "0": {
-    "name": "HamburgAltstadt",
+    "name": "Hamburg-Altstadt",
     "geld": 31336
   },
   "1": {
@@ -56,7 +56,7 @@
     "geld": 21890
   },
   "14": {
-    "name": "KleinerGrasbrook",
+    "name": "Kleiner Grasbrook",
     "geld": 13777
   },
   "15": {
@@ -72,7 +72,7 @@
     "geld": 31649
   },
   "18": {
-    "name": "AltonaAltstadt",
+    "name": "Altona-Altstadt",
     "geld": 30833
   },
   "19": {
@@ -80,7 +80,7 @@
     "geld": 31125
   },
   "20": {
-    "name": "AltonaNord",
+    "name": "Altona-Nord",
     "geld": 29901
   },
   "21": {
@@ -92,7 +92,7 @@
     "geld": 33565
   },
   "23": {
-    "name": "GrossFlottbek",
+    "name": "Groß Flottbek",
     "geld": 85952
   },
   "24": {
@@ -140,7 +140,7 @@
     "geld": 111088
   },
   "35": {
-    "name": "HoheluftWest",
+    "name": "Hoheluft-West",
     "geld": 42169
   },
   "36": {
@@ -164,7 +164,7 @@
     "geld": 32600
   },
   "41": {
-    "name": "HoheluftOst",
+    "name": "Hoheluft-Ost",
     "geld": 52006
   },
   "42": {
@@ -172,7 +172,7 @@
     "geld": 58438
   },
   "43": {
-    "name": "GrossBorstel",
+    "name": "Groß Borstel",
     "geld": 42631
   },
   "44": {
@@ -192,7 +192,7 @@
     "geld": 39541
   },
   "48": {
-    "name": "BarmbekSued",
+    "name": "Barmbek-Süd",
     "geld": 32679
   },
   "49": {
@@ -200,7 +200,7 @@
     "geld": 21239
   },
   "50": {
-    "name": "BarmbekNord",
+    "name": "Barmbek-Nord",
     "geld": 28330
   },
   "51": {
@@ -236,7 +236,7 @@
     "geld": 32210
   },
   "59": {
-    "name": "FarmsenBerne",
+    "name": "Farmsen-Berne",
     "geld": 31603
   },
   "69": {
@@ -264,7 +264,7 @@
     "geld": 38135
   },
   "75": {
-    "name": "LemsahlMellingstedt",
+    "name": "Lemsahl-Mellingstedt",
     "geld": 75191
   },
   "76": {
@@ -272,7 +272,7 @@
     "geld": 65694
   },
   "77": {
-    "name": "WohldorfOhlstedt",
+    "name": "Wohldorf-Ohlstedt",
     "geld": 94234
   },
   "78": {
@@ -288,7 +288,7 @@
     "geld": 33419
   },
   "81": {
-    "name": "Lohbruegge",
+    "name": "Lohbrügge",
     "geld": 29127
   },
   "82": {
@@ -352,7 +352,7 @@
     "geld": 32295
   },
   "97": {
-    "name": "GutMoorNord",
+    "name": "Gut Moor Nord",
     "geld": 32295
   },
   "98": {
@@ -376,7 +376,7 @@
     "geld": 36313
   },
   "103": {
-    "name": "Eissendorf",
+    "name": "Eißendorf",
     "geld": 32988
   },
   "104": {
@@ -396,7 +396,7 @@
     "geld": 31023
   },
   "108": {
-    "name": "NeugrabenFischbek",
+    "name": "Neugraben-Fischbek",
     "geld": 31101
   },
   "109": {
@@ -412,7 +412,7 @@
     "geld": 31335
   },
   "112": {
-    "name": "GutMoorSüd",
+    "name": "Gut Moor Süd",
     "geld": 32295
   }
 }
