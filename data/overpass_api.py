@@ -262,7 +262,7 @@ def hamburg_POIs_count_fast ( keywordString , district ):
                         "  node[\"amenity\"=\""+ keywords[4] +"\"](area.searchArea);\r\n"
                         #"  relation[\"amenity\"=\""+ keywords[4] +"\"](area.searchArea);\r\n"
                         ""
-                        "  node[\"amenity\"=\""+ keywords[5] +"\"](area.searchArea);\r\n"
+                        "  node[\"tourism\"=\""+ keywords[5] +"\"](area.searchArea);\r\n" # Tourism Required for Museum
                         #"  relation[\"amenity\"=\""+ keywords[5] +"\"](area.searchArea);\r\n"
                         ");\r\n"
                         "// print results\r\n"
@@ -309,7 +309,7 @@ def hamburg_POIs_count_fast ( keywordString , district ):
     keyword_count.append(keyword_text.count('\"amenity\": \"nightclub\",'))
     keyword_count.append(keyword_text.count('\"amenity\": \"cinema\",'))
     keyword_count.append(keyword_text.count('\"amenity\": \"theatre\",'))
-    keyword_count.append(keyword_text.count('\"tourism\": \"museum\",'))
+    keyword_count.append(keyword_text.count('\"tourism\": \"museum\",')) # Tourism Required for Museum
     
     printcount = keyword_count
     print("Keywords appear:")
