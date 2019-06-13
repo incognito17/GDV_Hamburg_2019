@@ -1,10 +1,12 @@
-#Stadtteile_Fonds path:hover {
+#Stadtteile_Fonds path:hover,
+#Stadtteile_Fonds2 path:hover {
     fill: aqua;
 }
 
-div.karte1 {
-    width: 600px;
+div.karte1,
+div.karte2{
+    width: 555px;
     border-style: solid;
     border-color: lightseagreen;
-    border-radius: 25px;
+    border-radius: 15px;
 }
