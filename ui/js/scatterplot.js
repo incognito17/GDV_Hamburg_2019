@@ -1,8 +1,11 @@
 //Call csv File
 d3.csv("data.csv", function (error, data) {
-    let style3;
+
+    let styl3;
+
     //Check For Error
     if (error) console.log("Error");
+
     /*
     Check For Data
     data.forEach(function (d) {
@@ -10,6 +13,7 @@ d3.csv("data.csv", function (error, data) {
         console.log("Y Is "+ d.y);
     });
     */
+
     //Create Margin
     var margin = { top: 40, right: 20, bottom: 60, left: 100 },
         width = 960 - margin.left - margin.right,
@@ -51,7 +55,6 @@ d3.csv("data.csv", function (error, data) {
     append("g").
     attr("transform", "translate(" + margin.left + "," + margin.right + ")");
 
-
     // Draw xAxis
     svg.append("g")
         .attr("class", "x axis")
@@ -62,12 +65,14 @@ d3.csv("data.csv", function (error, data) {
     svg.append("text")
         .attr("transform", "translate(" + (width / 2) + " ," + (height + margin.bottom) + ")")
         .style("text-anchor", "middle")
+        .style("font-weight", "bold")
         .text("Entfernung zur Stadtmitte in KM");
 
     //Draw yAxis
     svg.append("g")
         .attr("class", "y axis")
         .call(yAxis);
+
     //Name für Y-Achse
     svg.append("text")
         .attr("transform", "rotate(-90)")
@@ -75,7 +80,12 @@ d3.csv("data.csv", function (error, data) {
         .attr("x",0 - (height / 2))
         .attr("dy", "1em")
         .style("text-anchor", "middle")
+        .style("font-weight", "bold")
         .text("Einkünfte pro Steuerpflichtigen in €");
+
+    var div = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
 
     /* create bar or bind data*/
     //bind data
@@ -90,10 +100,18 @@ d3.csv("data.csv", function (error, data) {
         .attr("cy", function (d) { return yScale(d.Einkünfte); })
         .attr("r", 8)
         .on("mouseover", function(d){
-            style3 = document.getElementById(d.Stadtgebiet).style.fill;
+            styl3 = document.getElementById(d.Stadtgebiet).style.fill;
             document.getElementById(d.Stadtgebiet).style.fill="red";
-        })
-        .on("mouseout", function(d){
-            document.getElementById(d.Stadtgebiet).style.fill=style3;
+            div.transition()
+                .duration(100)
+                .style("opacity", .9);
+            div.html(d.Stadtgebiet+"<br/> Einkommen: "+d.Einkünfte+"€")
+                .style("left", (d3.event.pageX) + "px")
+                .style("top", (d3.event.pageY - 28) + "px");
+        }).on("mouseout", function(d){
+            document.getElementById(d.Stadtgebiet).style.fill=styl3;
+            div.transition()
+                .duration(200)
+                .style("opacity", 0);
         });
 });

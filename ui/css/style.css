@@ -1,6 +1,6 @@
 #Stadtteile_Fonds path:hover,
 #Stadtteile_Fonds2 path:hover {
-    fill: aqua;
+    fill: lime;
 }
 
 div.karte1,
@@ -33,4 +33,18 @@ div.karte2{
 
 .circle:hover {
     fill: red;
+}
+
+/* Tooltip-CSS */
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 150px;
+    height: 36px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: aqua;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
 }
