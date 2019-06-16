@@ -30,3 +30,7 @@ div.karte2{
 .circle {
     fill: #0069d9;
 }
+
+.circle:hover {
+    fill: red;
+}

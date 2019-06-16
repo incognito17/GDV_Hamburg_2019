@@ -8,7 +8,7 @@ $(document).ready(function(){
         Tipped.create(`#${val.id}`,val.id);
     });
     //Überschrift der Karte 2 ändern
-    $("#h1_karte2").text("Karte: Locations - "+document.getElementById("auswahl").value);
+    $("#h1_karte2").text("Locations: "+document.getElementById("auswahl").value);
     //Aufruf der Funktion zum färben
     nachEinnahmenFaerben();
     nachLocationFaerben("Bars");
@@ -48,7 +48,7 @@ function nachEinnahmenFaerben(){
 }
 
 function nachLocationFaerben(location){
-    $("#h1_karte2").text("Karte: Locations - "+location);
+    $("#h1_karte2").text("Locations: "+location);
     $.getJSON( "json/location.json", function( data ) {
         d3.select('#Stadtteile_Fonds2').selectAll('path').attr('fill', function(d){
             let name = this.id;

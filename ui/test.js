@@ -1,5 +1,6 @@
 //Call csv File
 d3.csv("data.csv", function (error, data) {
+    let style3;
     //Check For Error
     if (error) console.log("Error");
     /*
@@ -87,5 +88,12 @@ d3.csv("data.csv", function (error, data) {
         .attr("class", "circle")
         .attr("cx", function (d) { return xScale(d.Entfernung); })
         .attr("cy", function (d) { return yScale(d.Einkünfte); })
-        .attr("r", 8);
+        .attr("r", 8)
+        .on("mouseover", function(d){
+            style3 = document.getElementById(d.Stadtgebiet).style.fill;
+            document.getElementById(d.Stadtgebiet).style.fill="red";
+        })
+        .on("mouseout", function(d){
+            document.getElementById(d.Stadtgebiet).style.fill=style3;
+        });
 });
