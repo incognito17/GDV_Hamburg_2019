@@ -5,8 +5,28 @@
 
 div.karte1,
 div.karte2{
-    width: 555px;
+    width: 556px;
+    height: 516px;
     border-style: solid;
     border-color: lightseagreen;
     border-radius: 15px;
+}
+
+/* Test-CSS*/
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+.bar {
+    fill: orange;
+}
+
+.bar:hover {
+    fill: orangered ;
+}
+
+.circle {
+    fill: #0069d9;
 }
