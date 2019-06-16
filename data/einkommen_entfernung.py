@@ -68,7 +68,7 @@ for feature in hamburg_coords:
             sgb = sgb.replace('Ã¶','ö')
             sgb = sgb.replace('Ã¤','ä')
             sgb = sgb.replace('ÃŸ','ß')
-            sgb = sgb.replace('.','. ') # St.Pauli / St.Georg --> St. Pauli  / St. Georg
+            # sgb = sgb.replace('.','. ') # St.Pauli / St.Georg --> St. Pauli  / St. Georg
             if (skorna_array[0] == sgb) or ((skorna_array[0] in sgb) and ("und" in sgb)): # Statistik-Nord: Fick dich für "Waltershof und Finkenwerder;31649,00"
                 super_ugly_coding = important_row[1].split(',') # was zum Fick: '94234, 00]'
                 einkommen = re.sub('[:\'}]', '', super_ugly_coding[0]) # Einkommen
