@@ -9,11 +9,15 @@ import json
 import time
 
 def hamburg_POIs_count_fast ( keywordString , district ):
-    # keywordString =   " bar or pub or nightclub or cinema or theatre or museum in "
-    # district      =   " St. Pauli "
+    '''
+    # keywordString =   "bar or pub or nightclub or cinema or theatre or museum in"
+
+    # district      =   "St. Pauli"
+
     # How to use:
         # define keyword to look for, iterate over set of districts in for-loop
         # words will be quoted automatically, if necessary
+    '''
     keyword_count = [] # count occurrences
 
     # get district id to use in data
