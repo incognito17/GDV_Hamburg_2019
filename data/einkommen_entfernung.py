@@ -19,7 +19,7 @@ hamburg_coords = pygeoj.load("hamburg_city_districts.geojson")
 
 with open('h_einkommen_distanz.csv', 'w', encoding='utf-8') as csv_file: # Datei anlegen
         writer = csv.writer(csv_file,lineterminator='\n')
-        writer.writerow(["Stadtgebiet","Gesamtbetrag der Einkünfte je Steuerpflichtigen im Jahr","Entfernung"])
+        writer.writerow(["Stadtgebiet","Einkünfte","Entfernung"])
 
 for feature in hamburg_coords:
 
