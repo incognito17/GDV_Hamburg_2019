@@ -41,7 +41,7 @@ def hamburg_POIs_count_fast ( keywordString , district ):
                 if district == searched_name:
                     certain_district = current_district
                     district_id = certain_district.id
-                    # print(certain_district) # progress! ist der richtige Distrikt
+                    # print(certain_district) # ist der richtige Distrikt
                     break
 
         # gehe über alle Distrikte drüber
@@ -74,24 +74,19 @@ def hamburg_POIs_count_fast ( keywordString , district ):
     if len(keywords) == 6:
         query_request = ("[out:json][timeout:25];\r\n"
                         "area("+areacode+")->.searchArea;\r\n"
-                        "// Hochschule Mannheim, GDV-Lecture: Project Hamburg. Sorry for the perceived spam.\r\n"
+                        "// Hochschule Mannheim, GDV-Lecture: Project Hamburg.\r\n"
                         "(\r\n"
                         "  node[\"amenity\"=\""+ keywords[0] +"\"](area.searchArea);\r\n"
-                        #"  relation[\"amenity\"=\""+ keywords[0] +"\"](area.searchArea);\r\n"
                         ""
                         "  node[\"amenity\"=\""+ keywords[1] +"\"](area.searchArea);\r\n"
-                        #"  relation[\"amenity\"=\""+ keywords[1] +"\"](area.searchArea);\r\n"
                         ""
                         "  node[\"amenity\"=\""+ keywords[2] +"\"](area.searchArea);\r\n"
                         ""
                         "  node[\"amenity\"=\""+ keywords[3] +"\"](area.searchArea);\r\n"
-                        #"  relation[\"amenity\"=\""+ keywords[3] +"\"](area.searchArea);\r\n"
                         ""
                         "  node[\"amenity\"=\""+ keywords[4] +"\"](area.searchArea);\r\n"
-                        #"  relation[\"amenity\"=\""+ keywords[4] +"\"](area.searchArea);\r\n"
                         ""
                         "  node[\"tourism\"=\""+ keywords[5] +"\"](area.searchArea);\r\n" # Tourism Required for Museum
-                        #"  relation[\"amenity\"=\""+ keywords[5] +"\"](area.searchArea);\r\n"
                         ");\r\n"
                         "// print results\r\n"
                         "out body;\r\n"
@@ -116,7 +111,7 @@ def hamburg_POIs_count_fast ( keywordString , district ):
         print("ERROR IN HTTP CODE: " + str(r.status_code) + " at " + district)
         print(r.headers)
         print(r.text)
-        quit()
+        quit() # Quit on Error. We don't want incomplete databases.
 
     # print(r.text)  
     # es werden Elemente ausgegeben. # Jetzt müssen die nur zusammengezählt werden.
@@ -137,7 +132,7 @@ def hamburg_POIs_count_fast ( keywordString , district ):
     keyword_count.append(keyword_text.count('\"amenity\": \"nightclub\",'))
     keyword_count.append(keyword_text.count('\"amenity\": \"cinema\",'))
     keyword_count.append(keyword_text.count('\"amenity\": \"theatre\",'))
-    keyword_count.append(keyword_text.count('\"tourism\": \"museum\",')) # Tourism Required for Museum
+    keyword_count.append(keyword_text.count('\"tourism\": \"museum\",')) # Tourism Required for Museum, whyever
     
     printcount = keyword_count
     print("Keywords appear:")
@@ -182,8 +177,8 @@ def hamburg_POIs_count_fast ( keywordString , district ):
     # s.o.
 
 ''''
-
-Elements --> type --> "node"
+# Node representing POI
+# Elements --> type --> "node"
 
 200
 {
@@ -218,7 +213,7 @@ Elements --> type --> "node"
     "nodes": [ n ],
     "tags": {
         "amenity": "pub",
-        "name": "Roxie",
+        "name": "Roxie",    # Different ID, Same Location.
     }
     },
   ]

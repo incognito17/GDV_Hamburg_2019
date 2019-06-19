@@ -43,7 +43,7 @@ for feature in hamburg_coords:
 
     # DISTANZ VON GEOCODE ZU GEOCODE BERECHNEN
     entfernung = distance.distance(koord.point, hamburg_mitte).kilometers # Zahl im Bereich 0-20 sind Kilometer
-    entfernung = (int(entfernung*100)/float(100))    # Runden, bruder.
+    entfernung = (int(entfernung*100)/float(100))    # Runden.
     print(entfernung)
 
     # DATEN VORBEREITEN FÜR CSV
@@ -69,8 +69,8 @@ for feature in hamburg_coords:
             sgb = sgb.replace('Ã¤','ä')
             sgb = sgb.replace('ÃŸ','ß')
             # sgb = sgb.replace('.','. ') # St.Pauli / St.Georg --> St. Pauli  / St. Georg
-            if (skorna_array[0] == sgb) or ((skorna_array[0] in sgb) and ("und" in sgb)): # Statistik-Nord: Fick dich für "Waltershof und Finkenwerder;31649,00"
-                super_ugly_coding = important_row[1].split(',') # was zum Fick: '94234, 00]'
+            if (skorna_array[0] == sgb) or ((skorna_array[0] in sgb) and ("und" in sgb)): # "Waltershof und Finkenwerder;31649,00"
+                super_ugly_coding = important_row[1].split(',') # '94234, 00]' --> 94234
                 einkommen = re.sub('[:\'}]', '', super_ugly_coding[0]) # Einkommen
                 skorna_array.append(einkommen)
     print(skorna_array)
@@ -81,7 +81,7 @@ for feature in hamburg_coords:
     # CSV SCHREIBEN
     with open('h_einkommen_distanz.csv', 'a', encoding='utf-8') as csv_file: # append
         writer = csv.writer(csv_file,lineterminator='\n',delimiter=",")
-        writer.writerow(skorna_array) # hier ggf. noch Darstellung anpassen
+        writer.writerow(skorna_array)
 
 # For-Loop-End
 print("\r\nFinished")

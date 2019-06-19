@@ -47,13 +47,12 @@ for feature in hamburg_coords:
     koord_str = koord_plz.replace(' ,','')
     # You Either Code Properly, Or You Code Long Enough To See Yourself Become Hated By Everyone On Your Team
     print(koord_str) # print(koord)
-    ############### FEHLER -- UNWICHTIGE INFORMATIONEN! ####################
 
     #Timeouthandling
     time.sleep(0.1)
     # DISTANZ VON GEOCODE ZU GEOCODE BERECHNEN
     entfernung = distance.distance(koord.point, hamburg_mitte).kilometers # Zahl im Bereich 0-20 sind Kilometer
-    entfernung = (int(entfernung*100)/float(100))    # Runden, bruder.
+    entfernung = (int(entfernung*100)/float(100))    # Runden.
     # print(entfernung)
 
     # DATEN VORBEREITEN FÜR CSV
@@ -71,19 +70,7 @@ for feature in hamburg_coords:
     # count them up in hamburg_POIs_count, assign them integers
     '''
     ### Laufzeit 7.5 bis 15 Stunden! Nicht optimal!
-    ### Ggf.: Lieber Query-Anfrage in overpass_api.py verändern.
-    bar_count = opi.hamburg_POIs_count("bar or pub in ", stadtteil)
-    disco_count = opi.hamburg_POIs_count("nightclub in ", stadtteil)
-    cinema_count = opi.hamburg_POIs_count("cinema in ", stadtteil)
-    theatre_count = opi.hamburg_POIs_count("theatre in ", stadtteil)
-    museum_count = opi.hamburg_POIs_count("museum in ", stadtteil)
-
-    # Reihenfolge wie oben:
-    skorna_array.append(bar_count)
-    skorna_array.append(disco_count)
-    skorna_array.append(cinema_count)
-    skorna_array.append(theatre_count)
-    skorna_array.append(museum_count)
+    ### _fast reduziert das zu 30 Minuten. Maximal 'ne Stunde.
     '''
 
     # Reduzierung Laufzeit auf 2-4 Stunden.
@@ -106,7 +93,7 @@ for feature in hamburg_coords:
     # CSV SCHREIBEN
     with open('skorna_datasafe.csv', 'a', encoding='utf-8') as csv_file: # append
         writer = csv.writer(csv_file,lineterminator='\n',delimiter=",")
-        writer.writerow(skorna_array) # hier ggf. noch Darstellung anpassen
+        writer.writerow(skorna_array)
 
     # Zeitinfo
     endzeit = time.time()
@@ -116,11 +103,9 @@ for feature in hamburg_coords:
     print("##### MOVING TO NEXT CITY DISTRICT #####\r\n")
 
     time.sleep(0.25) # Timeouthandling
-    # print(feature.geometry.type)
-    # print(feature.geometry.coordinates)
-    # print(feature.properties)
 
 # For-Loop-End
+
 complete_end_time = time.time()
 complete_time_taken = complete_end_time - complete_start_time
 complete_time_taken_min = (complete_time_taken/60)
