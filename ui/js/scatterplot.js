@@ -83,6 +83,7 @@ d3.csv("data.csv", function (error, data) {
         .style("font-weight", "bold")
         .text("Einkünfte pro Steuerpflichtigen in €");
 
+    //Div für Tooltip erstellen
     var div = d3.select("body").append("div")
         .attr("class", "tooltip")
         .style("opacity", 0);

@@ -76,7 +76,6 @@ function nachLocationFaerben(location){
                     }
                 }
             });
-
             if (location=="Bars"){
                 return barsFaerben(loc);
             } else if (location=="Diskotheken") {
@@ -105,7 +104,6 @@ function nachLocationFaerben(location){
  *
  * Platz für weitere Funktionen und Implementierungen.
  */
-
 function barsFaerben(loc) {
     let color;
     if (loc == 0) {
