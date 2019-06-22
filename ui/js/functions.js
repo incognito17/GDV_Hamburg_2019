@@ -58,7 +58,6 @@ function nachLocationFaerben(location){
     $.getJSON( "json/location.json", function( data ) {
         d3.select('#Stadtteile_Fonds2').selectAll('path').attr('fill', function(d){
             let name = this.id;
-            name = name.substring(0, name.length-1);
             let loc;
             let kategorie;
             $.each(data, function(key, val){

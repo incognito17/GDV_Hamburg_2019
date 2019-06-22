@@ -108,7 +108,6 @@ d3.csv("data.csv", function (error, data) {
                 geb = "StPauli"
             }
             styl3 = document.getElementById(geb).style.fill;
-            styl4 = document.getElementById(geb+"2").style.fill;
             document.getElementById(geb).style.fill="lime";
             document.getElementById(geb+"2").style.fill="lime";
             div.transition()
@@ -117,12 +116,6 @@ d3.csv("data.csv", function (error, data) {
             div.html(d.Stadtgebiet+"<br/> Einkommen: "+d.Einkünfte+" €<br/>Entfernung: "+d.Entfernung+" km")
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 60) + "px");
-
-            document.getElementById(geb+"2").style.fill="lime";
-            div.transition()
-                .duration(100)
-                .style("opacity", .9);
-            
         }).on("mouseout", function(d){
             let geb = d.Stadtgebiet;
             if (geb == "St. Georg") {
@@ -132,11 +125,6 @@ d3.csv("data.csv", function (error, data) {
             }
             document.getElementById(geb).style.fill=styl3;
             document.getElementById(geb+"2").style.fill=styl3;
-            div.transition()
-                .duration(200)
-                .style("opacity", 0);
-
-            document.getElementById(geb+"2").style.fill=styl4;
             div.transition()
                 .duration(200)
                 .style("opacity", 0);
