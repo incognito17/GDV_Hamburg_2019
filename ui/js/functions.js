@@ -117,13 +117,13 @@ function diskoFaerben(loc) {
     if (loc == 0) {
         color = "#ffffff";
     } else if (loc == 1) {
-        color = "rgb(255,212,254)";
+        color = "rgb(255,172,233)";
     } else if (loc == 2) {
-        color = "#fc8dff";
+        color = "#ff7be0";
     } else if (loc >= 3 && loc <= 4) {
-        color = "#fe3cff";
+        color = "#ff2dfa";
     } else if (loc >= 5) {
-        color = "#fe00ff";
+        color = "#ff23b0";
     } else {
         color = "lightgrey";
     }
@@ -151,15 +151,15 @@ function theaterFaerben(loc) {
     if (loc == 0) {
         color = "#ffffff";
     } else if (loc == 1) {
-        color = "rgb(255,251,216)";
+        color = "rgb(255,245,199)";
     } else if (loc == 2) {
-        color = "#fffcac";
+        color = "#fff78c";
     } else if (loc >= 3 && loc <= 4) {
-        color = "#fffa72";
+        color = "#ffe857";
     } else if (loc >= 5 && loc <= 7) {
-        color = "#fff934";
+        color = "#ffd321";
     } else if (loc >= 8) {
-        color = "#ffca00";
+        color = "#ff9c00";
     } else {
         color = "lightgrey";
     }
