@@ -3,10 +3,6 @@
  * Als Text wird im Moment die ID (was teilweise Name ist) hinzugefügt
  * */
 $(document).ready(function(){
-    let paths = d3.select('#Stadtteile_Fonds').selectAll('path');
-    $.each(paths[0], function(key, val){
-        Tipped.create(`#${val.id}`,val.id);
-    });
     //Überschrift der Karte 2 ändern
     $("#h1_karte2").text("Locations: "+document.getElementById("auswahl").value);
     //Aufruf der Funktion zum färben
@@ -21,6 +17,7 @@ $(document).ready(function(){
 function nachEinnahmenFaerben(){
     $.getJSON( "json/geld.json", function( data ) {
         let styl3;
+        let styleCircle;
         d3.select('#Stadtteile_Fonds').selectAll('path').attr('fill', function(d){
             let name = this.id;
             let einnahmen;
@@ -45,10 +42,13 @@ function nachEinnahmenFaerben(){
             }
             return color;
         }).on("mouseover", function(){
-           styl3= document.getElementById(this.id+"2").style.fill;
+           styl3 = document.getElementById(this.id+"2").style.fill;
+           styleCircle = document.getElementById(this.id+"C").style.fill;
             document.getElementById(this.id+"2").style.fill="lime";
+            document.getElementById(this.id+"C").style.fill="lime";
         }).on("mouseout", function(){
             document.getElementById(this.id+"2").style.fill=styl3;
+            document.getElementById(this.id+"C").style.fill=styleCircle;
         });
     });
 }
@@ -57,6 +57,7 @@ function nachLocationFaerben(location){
     $("#h1_karte2").text("Locations: "+location);
     $.getJSON( "json/location.json", function( data ) {
         let styl3;
+        let styleCircle;
         d3.select('#Stadtteile_Fonds2').selectAll('path').attr('fill', function(d){
             let name = this.id;
             let loc;
@@ -91,11 +92,14 @@ function nachLocationFaerben(location){
             let name = this.id;
             name = name.substring(0, name.length-1);
             styl3=document.getElementById(name).style.fill;
+            styleCircle = document.getElementById(name+"C").style.fill;
             document.getElementById(name).style.fill="lime";
+            document.getElementById(name+"C").style.fill="lime";
         }).on("mouseout", function(){
             let name = this.id;
             name = name.substring(0, name.length-1);
             document.getElementById(name).style.fill=styl3;
+            document.getElementById(name+"C").style.fill=styleCircle;
         });
     });
 }

@@ -97,19 +97,14 @@ d3.csv("data.csv", function (error, data) {
     append("circle")
     //update data
         .attr("class", "circle")
+        .attr("id", function (d) { return d.Stadtgebiet+"C"; })
         .attr("cx", function (d) { return xScale(d.Entfernung); })
         .attr("cy", function (d) { return yScale(d.Einkünfte); })
         .attr("r", 8)
         .on("mouseover", function(d){
-            let geb = d.Stadtgebiet;
-            if (geb == "St. Georg") {
-                geb = "StGeorg";
-            } else if (geb == "St. Pauli") {
-                geb = "StPauli"
-            }
-            styl3 = document.getElementById(geb).style.fill;
-            document.getElementById(geb).style.fill="lime";
-            document.getElementById(geb+"2").style.fill="lime";
+            styl3 = document.getElementById(d.Stadtgebiet).style.fill;
+            document.getElementById(d.Stadtgebiet).style.fill="lime";
+            document.getElementById(d.Stadtgebiet+"2").style.fill="lime";
             div.transition()
                 .duration(100)
                 .style("opacity", .9);
@@ -117,14 +112,8 @@ d3.csv("data.csv", function (error, data) {
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 60) + "px");
         }).on("mouseout", function(d){
-            let geb = d.Stadtgebiet;
-            if (geb == "St. Georg") {
-                geb = "StGeorg";
-            } else if (geb == "St. Pauli") {
-                geb = "StPauli"
-            }
-            document.getElementById(geb).style.fill=styl3;
-            document.getElementById(geb+"2").style.fill=styl3;
+            document.getElementById(d.Stadtgebiet).style.fill=styl3;
+            document.getElementById(d.Stadtgebiet+"2").style.fill=styl3;
             div.transition()
                 .duration(200)
                 .style("opacity", 0);
