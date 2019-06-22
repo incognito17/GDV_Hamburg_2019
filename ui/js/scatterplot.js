@@ -2,7 +2,6 @@
 d3.csv("data.csv", function (error, data) {
 
     let styl3;
-    let styl4;
 
     //Check For Error
     if (error) console.log("Error");
