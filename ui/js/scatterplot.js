@@ -100,16 +100,28 @@ d3.csv("data.csv", function (error, data) {
         .attr("cy", function (d) { return yScale(d.Einkünfte); })
         .attr("r", 8)
         .on("mouseover", function(d){
-            styl3 = document.getElementById(d.Stadtgebiet).style.fill;
-            document.getElementById(d.Stadtgebiet).style.fill="red";
+            let geb = d.Stadtgebiet;
+            if (geb == "St. Georg") {
+                geb = "StGeorg";
+            } else if (geb == "St. Pauli") {
+                geb = "StPauli"
+            }
+            styl3 = document.getElementById(geb).style.fill;
+            document.getElementById(geb).style.fill="red";
             div.transition()
                 .duration(100)
                 .style("opacity", .9);
-            div.html(d.Stadtgebiet+"<br/> Einkommen: "+d.Einkünfte+"€")
+            div.html(d.Stadtgebiet+"<br/> Einkommen: "+d.Einkünfte+" €<br/>Entfernung: "+d.Entfernung+" km")
                 .style("left", (d3.event.pageX) + "px")
-                .style("top", (d3.event.pageY - 28) + "px");
+                .style("top", (d3.event.pageY - 60) + "px");
         }).on("mouseout", function(d){
-            document.getElementById(d.Stadtgebiet).style.fill=styl3;
+            let geb = d.Stadtgebiet;
+            if (geb == "St. Georg") {
+                geb = "StGeorg";
+            } else if (geb == "St. Pauli") {
+                geb = "StPauli"
+            }
+            document.getElementById(geb).style.fill=styl3;
             div.transition()
                 .duration(200)
                 .style("opacity", 0);
