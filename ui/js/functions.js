@@ -189,15 +189,15 @@ function museenFaerben(loc) {
     if (loc == 0) {
         color = "#ffffff";
     } else if (loc == 1) {
-        color = "rgb(199,255,196)";
+        color = "rgb(171,255,160)";
     } else if (loc == 2) {
-        color = "#a0ff9c";
+        color = "#81ff79";
     } else if (loc >= 3 && loc <= 4) {
-        color = "#4fff5d";
+        color = "#40ff3b";
     } else if (loc >= 5 && loc <= 7) {
         color = "#1dec1e";
     } else if (loc >= 8) {
-        color = "#20da00";
+        color = "#00da17";
     } else {
         color = "lightgrey";
     }
