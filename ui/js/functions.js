@@ -56,6 +56,7 @@ function nachEinnahmenFaerben(){
 function nachLocationFaerben(location){
     $("#h1_karte2").text("Locations: "+location);
     $.getJSON( "json/location.json", function( data ) {
+        let styl3;
         d3.select('#Stadtteile_Fonds2').selectAll('path').attr('fill', function(d){
             let name = this.id;
             let loc;
@@ -87,6 +88,15 @@ function nachLocationFaerben(location){
             } else if (location=="Museen") {
                 return museenFaerben(loc);
             }
+        }).on("mouseover", function(){
+            let name = this.id;
+            name = name.substring(0, name.length-1);
+            styl3=document.getElementById(name).style.fill;
+            document.getElementById(name).style.fill="lime";
+        }).on("mouseout", function(){
+            let name = this.id;
+            name = name.substring(0, name.length-1);
+            document.getElementById(name).style.fill=styl3;
         });
     });
 }
