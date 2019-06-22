@@ -108,6 +108,7 @@ d3.csv("data.csv", function (error, data) {
             }
             styl3 = document.getElementById(geb).style.fill;
             document.getElementById(geb).style.fill="lime";
+            document.getElementById(geb+"2").style.fill="lime";
             div.transition()
                 .duration(100)
                 .style("opacity", .9);
@@ -122,6 +123,7 @@ d3.csv("data.csv", function (error, data) {
                 geb = "StPauli"
             }
             document.getElementById(geb).style.fill=styl3;
+            document.getElementById(geb+"2").style.fill=styl3;
             div.transition()
                 .duration(200)
                 .style("opacity", 0);

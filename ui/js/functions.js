@@ -20,6 +20,7 @@ $(document).ready(function(){
  */
 function nachEinnahmenFaerben(){
     $.getJSON( "json/geld.json", function( data ) {
+        let styl3;
         d3.select('#Stadtteile_Fonds').selectAll('path').attr('fill', function(d){
             let name = this.id;
             let einnahmen;
@@ -43,6 +44,11 @@ function nachEinnahmenFaerben(){
                 color = "lightgrey";
             }
             return color;
+        }).on("mouseover", function(){
+           styl3= document.getElementById(this.id+"2").style.fill;
+            document.getElementById(this.id+"2").style.fill="lime";
+        }).on("mouseout", function(){
+            document.getElementById(this.id+"2").style.fill=styl3;
         });
     });
 }
@@ -55,7 +61,7 @@ function nachLocationFaerben(location){
             let loc;
             let kategorie;
             $.each(data, function(key, val){
-                if (name == val.Stadtteil){
+                if (name == val.Stadtteil+"2"){
                     if (location=="Bars"){
                         loc=val.Bars;
                     } else if (location=="Diskotheken") {
