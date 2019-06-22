@@ -135,11 +135,11 @@ function kinoFaerben(loc) {
     if (loc == 0) {
         color = "#ffffff";
     } else if (loc == 1) {
-        color = "rgb(207,255,241)";
+        color = "rgb(156,200,255)";
     } else if (loc == 2) {
-        color = "#9afff3";
+        color = "#4da1ff";
     } else if (loc >= 3) {
-        color = "#00fff2";
+        color = "#3056ff";
     }  else {
         color = "lightgrey";
     }

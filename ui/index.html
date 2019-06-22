@@ -10553,6 +10553,13 @@
             <h1 id="h1_karte2"></h1>
             <p>Hier werden verschiedene Arten von Unterhaltungsangeboten angezeigt
                 (Bars, Diskotheken, Kinos, Theater, Museen).
+                <select id="auswahl" onchange="nachLocationFaerben(this.value)">
+                    <option value="Bars">Bars</option>
+                    <option value="Diskotheken">Diskotheken</option>
+                    <option value="Kinos">Kinos</option>
+                    <option value="Theater">Theater</option>
+                    <option value="Museen">Museen</option>
+                </select>
             </p>
             <div class="karte2">
                 <?xml version="1.0" encoding="utf-8"?>
@@ -21092,13 +21099,7 @@
     </div>
 </div>
 <div class="text-center">
-    <select id="auswahl" onchange="nachLocationFaerben(this.value)">
-        <option value="Bars">Bars</option>
-        <option value="Diskotheken">Diskotheken</option>
-        <option value="Kinos">Kinos</option>
-        <option value="Theater">Theater</option>
-        <option value="Museen">Museen</option>
-    </select>
+
 </div>
 <script type="text/javascript" src="js/functions.js"></script>
 <script type="text/javascript" src="js/scatterplot.js"></script>

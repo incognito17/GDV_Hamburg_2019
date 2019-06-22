@@ -107,7 +107,7 @@ d3.csv("data.csv", function (error, data) {
                 geb = "StPauli"
             }
             styl3 = document.getElementById(geb).style.fill;
-            document.getElementById(geb).style.fill="red";
+            document.getElementById(geb).style.fill="lime";
             div.transition()
                 .duration(100)
                 .style("opacity", .9);
