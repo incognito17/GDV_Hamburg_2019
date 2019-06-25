@@ -124,7 +124,7 @@ function nachLocationFaerben(location){
             let name = this.id;
             let bars, diskos, kinos, theater, museen;
             $.each(data, function(key, val){
-                if (name == val.Stadtteil+"2"){
+                if (name == val.Stadtteil+"2") {
                     bars=val.Bars;
                     diskos=val.Diskotheken;
                     kinos=val.Kinos;
@@ -133,6 +133,9 @@ function nachLocationFaerben(location){
                 }
             });
             name = name.substring(0, name.length-1);
+            let nameSt = name;
+            (nameSt == "StGeorg") ? nameSt = "St. Georg" : nameSt;
+            (nameSt == "StPauli") ? nameSt = "St. Pauli" : nameSt;
             styl3=document.getElementById(name).style.fill;
             styleCircle = document.getElementById(name+"C").style.fill;
             document.getElementById(name).style.fill="lime";
@@ -140,7 +143,7 @@ function nachLocationFaerben(location){
             divTip.transition()
                 .duration(100)
                 .style("opacity", .9);
-            divTip.html("Stadtteil: "+name+"<br/>Bars: "+bars+"<br/>Diskotheken: "+diskos
+            divTip.html("Stadtteil: "+nameSt+"<br/>Bars: "+bars+"<br/>Diskotheken: "+diskos
                 +"<br/>Kinos: "+kinos+"<br/>Theater: "+theater+"<br/>Museen: "+museen)
                 .style("left", (d3.event.pageX + 10) + "px")
                 .style("top", (d3.event.pageY - 110) + "px");
