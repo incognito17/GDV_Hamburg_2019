@@ -12,8 +12,9 @@ function tortenDiagrammErstellen(stadtteil){
     var total=0;
     d3.json("json/location.json", function(error, data) {
 
+        //extra Objekt-Array erstellen mit Daten zu Bars etc., aus welchem dann
+        //das Kuchendiagramm gebildet wird.
         let locationsData = [new Object(), new Object(), new Object(), new Object(), new Object()];
-
         $.each(data, function(key, val){
            if(stadtteil == val.Stadtteil+"2") {
                locationsData[0].count = val.Bars;
@@ -31,7 +32,6 @@ function tortenDiagrammErstellen(stadtteil){
 
         for(var a=0;a<locationsData.length;a++){
             total=total+parseInt(locationsData[a].count); // simple logic to calculate total of data count value
-            console.log(total);
         }
         var pie_data=[];
         for( var a=0;a<locationsData.length;a++){ // simple logic to calculate percentage data for the pie

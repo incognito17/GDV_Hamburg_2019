@@ -5,6 +5,7 @@
 $(document).ready(function(){
     let stadtteile = d3.select('#Stadtteile_Fonds2').selectAll('path');
     stadtteile[0].forEach(dialogKreiren);
+
     //Überschrift der Karte 2 ändern
     $("#h1_karte2").text("Locations: "+document.getElementById("auswahl").value);
 
@@ -80,6 +81,12 @@ function nachEinnahmenFaerben(){
 
 function nachLocationFaerben(location){
     $("#h1_karte2").text("Locations: "+location);
+
+    //Div für Tooltip erstellen
+    let divTip = d3.select("body").append("div")
+        .attr("class", "tooltip2")
+        .style("opacity", 0);
+
     $.getJSON( "json/location.json", function( data ) {
         let styl3;
         let styleCircle;
@@ -115,16 +122,36 @@ function nachLocationFaerben(location){
             }
         }).on("mouseover", function(){
             let name = this.id;
+            let bars, diskos, kinos, theater, museen;
+            $.each(data, function(key, val){
+                if (name == val.Stadtteil+"2"){
+                    bars=val.Bars;
+                    diskos=val.Diskotheken;
+                    kinos=val.Kinos;
+                    theater=val.Theater;
+                    museen=val.Museen;
+                }
+            });
             name = name.substring(0, name.length-1);
             styl3=document.getElementById(name).style.fill;
             styleCircle = document.getElementById(name+"C").style.fill;
             document.getElementById(name).style.fill="lime";
             document.getElementById(name+"C").style.fill="lime";
+            divTip.transition()
+                .duration(100)
+                .style("opacity", .9);
+            divTip.html("Stadtteil: "+name+"<br/>Bars: "+bars+"<br/>Diskotheken: "+diskos
+                +"<br/>Kinos: "+kinos+"<br/>Theater: "+theater+"<br/>Museen: "+museen)
+                .style("left", (d3.event.pageX + 10) + "px")
+                .style("top", (d3.event.pageY - 110) + "px");
         }).on("mouseout", function(){
             let name = this.id;
             name = name.substring(0, name.length-1);
             document.getElementById(name).style.fill=styl3;
             document.getElementById(name+"C").style.fill=styleCircle;
+            divTip.transition()
+                .duration(200)
+                .style("opacity", 0);
         });
     });
 }

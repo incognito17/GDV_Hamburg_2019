@@ -123,7 +123,7 @@ d3.csv("data.csv", function (error, data) {
             div.transition()
                 .duration(100)
                 .style("opacity", .9);
-            div.html(d.Stadtgebiet+"<br/> Einkommen: "+d.Einkünfte+" €<br/>Entfernung: "+d.Entfernung+" km")
+            div.html(d.Stadtgebiet+"<br/>Einkommen: "+d.Einkünfte+" €<br/>Entfernung: "+d.Entfernung+" km")
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 60) + "px");
         }).on("mouseout", function(d){
