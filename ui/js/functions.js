@@ -3,12 +3,37 @@
  * Als Text wird im Moment die ID (was teilweise Name ist) hinzugefügt
  * */
 $(document).ready(function(){
+    let stadtteile = d3.select('#Stadtteile_Fonds2').selectAll('path');
+    stadtteile[0].forEach(dialogKreiren);
     //Überschrift der Karte 2 ändern
     $("#h1_karte2").text("Locations: "+document.getElementById("auswahl").value);
+
+    //dialog generieren
+    $("#dialog").dialog({
+        autoOpen: false,
+        width: 'auto',
+        close: function(event, ui) {
+            $("#dialog").html("");
+        }
+    });
+
     //Aufruf der Funktion zum färben
     nachEinnahmenFaerben();
     nachLocationFaerben("Bars");
 });
+
+/**
+ * Selektiert jedes Element aus dem Stadtteil-Array
+ */
+function dialogKreiren(stadtteil){
+    let stadtTeilId = stadtteil.id;
+    let selektorId = "#"+stadtTeilId;
+    $(selektorId).click(function(){
+        tortenDiagrammErstellen(stadtTeilId);
+        $("#dialog").dialog("open");
+    });
+}
+
 /**
  * Diese Funktion selektiert die Einnahme-Daten (als JSON)
  * und färbt dementsprechend die erste Karte.

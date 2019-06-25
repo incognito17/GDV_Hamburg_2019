@@ -16,13 +16,6 @@ div.karte2 {
     stroke: #000;
     shape-rendering: crispEdges;
 }
-.bar {
-    fill: orange;
-}
-
-.bar:hover {
-    fill: orangered ;
-}
 
 .circle {
     fill: #0069d9;
@@ -45,3 +38,6 @@ div.tooltip {
     border-radius: 8px;
     pointer-events: none;
 }
+
+/* piechart CSS*/
+

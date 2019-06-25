@@ -2,6 +2,7 @@
 d3.csv("data.csv", function (error, data) {
 
     let styl3;
+    let styl4;
 
     //Check For Error
     if (error) console.log("Error");
@@ -97,14 +98,28 @@ d3.csv("data.csv", function (error, data) {
     append("circle")
     //update data
         .attr("class", "circle")
-        .attr("id", function (d) { return d.Stadtgebiet+"C"; })
-        .attr("cx", function (d) { return xScale(d.Entfernung); })
+        .attr("id", function (d) {
+            let stadtteil = d.Stadtgebiet;
+            if (stadtteil == "St. Pauli") {
+                stadtteil = "StPauli";
+            } else if (stadtteil == "St. Georg") {
+                stadtteil = "StGeorg"
+            }
+            return stadtteil+"C";
+        }).attr("cx", function (d) { return xScale(d.Entfernung); })
         .attr("cy", function (d) { return yScale(d.Einkünfte); })
         .attr("r", 8)
         .on("mouseover", function(d){
-            styl3 = document.getElementById(d.Stadtgebiet).style.fill;
-            document.getElementById(d.Stadtgebiet).style.fill="lime";
-            document.getElementById(d.Stadtgebiet+"2").style.fill="lime";
+            let stadtteil = d.Stadtgebiet;
+            if (stadtteil == "St. Pauli") {
+                stadtteil = "StPauli";
+            } else if (stadtteil == "St. Georg") {
+                stadtteil = "StGeorg"
+            }
+            styl3 = document.getElementById(stadtteil).style.fill;
+            styl4 = document.getElementById(stadtteil+"2").style.fill;
+            document.getElementById(stadtteil).style.fill="lime";
+            document.getElementById(stadtteil+"2").style.fill="lime";
             div.transition()
                 .duration(100)
                 .style("opacity", .9);
@@ -112,8 +127,14 @@ d3.csv("data.csv", function (error, data) {
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 60) + "px");
         }).on("mouseout", function(d){
-            document.getElementById(d.Stadtgebiet).style.fill=styl3;
-            document.getElementById(d.Stadtgebiet+"2").style.fill=styl3;
+            let stadtteil = d.Stadtgebiet;
+            if (stadtteil == "St. Pauli") {
+                stadtteil = "StPauli";
+            } else if (stadtteil == "St. Georg") {
+                stadtteil = "StGeorg"
+            }
+            document.getElementById(stadtteil).style.fill=styl3;
+            document.getElementById(stadtteil+"2").style.fill=styl4;
             div.transition()
                 .duration(200)
                 .style("opacity", 0);
