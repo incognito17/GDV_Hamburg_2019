@@ -52,11 +52,6 @@ function tortenDiagrammErstellen(stadtteil){
             .attr('fill', function(d, i) {
                 return locationsData[i].color;
             });
-        path.append("text")
-            .attr("transform", function(d) {
-                return "translate(" + arc.centroid(d) + ")"; })
-            .style("text-anchor", "middle")
-            .text("tata");
 //set the color for each slice to be chosen, from the color defined in sample_data.json
 //this creates the actual SVG path using the associated data (pie) with the arc drawing function
     });
