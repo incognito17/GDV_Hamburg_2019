@@ -55,4 +55,9 @@ function tortenDiagrammErstellen(stadtteil){
 //set the color for each slice to be chosen, from the color defined in sample_data.json
 //this creates the actual SVG path using the associated data (pie) with the arc drawing function
     });
+    let stName = stadtteil;
+    stName = stName.substring(0, stName.length-1);
+    (stName == "StGeorg") ? stName = "St. Georg" : stName;
+    (stName == "StPauli") ? stName = "St. Pauli" : stName;
+    $("#dialog").append(`<h1>${stName}</h1>`);
 }
