@@ -1,17 +1,22 @@
 function tortenDiagrammErstellen(stadtteil){
-    var width = 550;          //width
-    var height = 350;        //height
-    var radius = 300/ 2;   //radius of the pie-chart
-    var color = d3.scale.category20b();    //builtin range of colors
-    var svg = d3.select("#dialog")        //create the SVG element inside the <body>
-        .append('svg').attr('width', width) //set the width and height of our visualization
-        .attr('height', height) // attributes of the <svg> tag
-        .append('g')              //create a group to hold our pie chart
+    var width = 550;          //Breite
+    var height = 350;         //Höhe
+    var radius = 300/ 2;      //Radius des Kreisdiagramms
+    //Eingebaute Farbpalette
+    var color = d3.scale.category20b();
+    /**
+     * SVG-Element innerhalb des Divs mit der ID "dialog" erstellen, Höhe und Breite setzen,
+     * Gruppe "g", welche das eigentliche Diagramm beinhalten wird erstellen sowie
+     * das Zentrum des Diagramms passend setzen.
+     */
+    var svg = d3.select("#dialog")
+        .append('svg').attr('width', width)
+        .attr('height', height)
+        .append('g')
         .attr('transform', 'translate(' + (width / 2) +
-            ',' + (height / 2) + ')');//move the center of the pie chart from 0, 0 to specified value
+            ',' + (height / 2) + ')');
     var total=0;
     d3.json("json/location.json", function(error, data) {
-
         //extra Objekt-Array erstellen mit Daten zu Bars etc., aus welchem dann
         //das Kuchendiagramm gebildet wird.
         let locationsData = [new Object(), new Object(), new Object(), new Object(), new Object()];
@@ -29,21 +34,24 @@ function tortenDiagrammErstellen(stadtteil){
                locationsData[4].color = "green";
            }
         });
-
+        //Die Gesamtanzahl der POIs berechnen
         for(var a=0;a<locationsData.length;a++){
-            total=total+parseInt(locationsData[a].count); // simple logic to calculate total of data count value
+            total=total+parseInt(locationsData[a].count);
         }
+        //Den prozentuellen Anteil für Kuchendiagramm berechnen
         var pie_data=[];
-        for( var a=0;a<locationsData.length;a++){ // simple logic to calculate percentage data for the pie
+        for( var a=0;a<locationsData.length;a++){
             pie_data[a]=(locationsData[a].count/total)*100;
         }
+        // arc-Element erstellen
         var arc = d3.svg.arc().outerRadius(radius);
-// creating arc element.
         var pie = d3.layout.pie()
             .value(function(d,i) { return pie_data[i]; })
             .sort(null);
-//Given a list of values, it will create an arc data for us
-//we must explicitly specify it to access the value of each element in our data array
+        /**
+         * Das eigentliche Kuchendiagramm "bauen" (mit den Daten aus locationsData-Array)
+         * und jeden einzelnen Abschnitt mit gegebener Farbe färben lassen.
+         */
         var path = svg.selectAll('path')
             .data(pie(locationsData))
             .enter()
@@ -52,9 +60,9 @@ function tortenDiagrammErstellen(stadtteil){
             .attr('fill', function(d, i) {
                 return locationsData[i].color;
             });
-//set the color for each slice to be chosen, from the color defined in sample_data.json
-//this creates the actual SVG path using the associated data (pie) with the arc drawing function
     });
+    //Den Stadtteilnamen als Titel zum PopUP-Dialoghinzufügen
+    //Dabei die "StGeorg" und "StPauli" Sonderfälle beachten.
     let stName = stadtteil;
     stName = stName.substring(0, stName.length-1);
     (stName == "StGeorg") ? stName = "St. Georg" : stName;
