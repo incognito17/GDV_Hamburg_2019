@@ -9,7 +9,7 @@ Institution:    `Hochschule Mannheim`
 ### Teammitglieder
 Michell Skorna        - Datenaufbereitung, Dokumentation, iExpo-Poster\
 Sergej Kryvoruchko    - Grafische Oberfläche, Scatterplots, Choroplethenkarte\
-Simon Karl            - [Öh, ja...](https://cdn.shopify.com/s/files/1/0043/6627/0553/products/SY_You_Tried_1024x1024.png)\
+Simon Karl            - Datenaufbereitung, Dokumentation\
 Patrick Streitmatter  - [Öh, ja...](https://cdn.shopify.com/s/files/1/0043/6627/0553/products/SY_You_Tried_1024x1024.png)
 
 ### Dozent
