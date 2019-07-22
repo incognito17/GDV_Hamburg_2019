@@ -35,6 +35,11 @@ function dialogKreiren(stadtteil){
     });
 }
 
+//Div für Tooltip erstellen
+let divTip = d3.select("body").append("div")
+    .attr("class", "tooltip2")
+    .style("opacity", 0);
+
 /**
  * Diese Funktion selektiert die Einnahme-Daten (als JSON)
  * und färbt dementsprechend die erste Karte.
@@ -44,9 +49,10 @@ function nachEinnahmenFaerben(){
     $.getJSON( "json/geld.json", function( data ) {
         let styl3;
         let styleCircle;
+        let einnahmen;
+        let name;
         d3.select('#Stadtteile_Fonds').selectAll('path').attr('fill', function(d){
-            let name = this.id;
-            let einnahmen;
+            name = this.id;
             let color;
             $.each(data, function(key, val){
                 if (name == val.name){
@@ -68,25 +74,37 @@ function nachEinnahmenFaerben(){
             }
             return color;
         }).on("mouseover", function(){
+            name = this.id;
+            $.each(data, function(key, val){
+                if (name == val.name){
+                    einnahmen = val.geld;
+                }
+            });
            styl3 = document.getElementById(this.id+"2").style.fill;
            styleCircle = document.getElementById(this.id+"C").style.fill;
             document.getElementById(this.id+"2").style.fill="lime";
             document.getElementById(this.id+"C").style.fill="lime";
+            (name == "StGeorg") ? name = "St. Georg" : name;
+            (name == "StPauli") ? name = "St. Pauli" : name;
+            divTip.transition()
+                .duration(100)
+                .style("opacity", .9);
+            divTip.html("Stadtteil: "+name+"<br/>Enkünfte: "+einnahmen)
+                .style("left", (d3.event.pageX + 10) + "px")
+                .style("top", (d3.event.pageY - 70) + "px")
+                .style("height", "35px");
         }).on("mouseout", function(){
             document.getElementById(this.id+"2").style.fill=styl3;
             document.getElementById(this.id+"C").style.fill=styleCircle;
+            divTip.transition()
+                .duration(200)
+                .style("opacity", 0);
         });
     });
 }
 
 function nachLocationFaerben(location){
     $("#h1_karte2").text("Locations: "+location);
-
-    //Div für Tooltip erstellen
-    let divTip = d3.select("body").append("div")
-        .attr("class", "tooltip2")
-        .style("opacity", 0);
-
     $.getJSON( "json/location.json", function( data ) {
         let styl3;
         let styleCircle;
@@ -146,7 +164,8 @@ function nachLocationFaerben(location){
             divTip.html("Stadtteil: "+nameSt+"<br/>Bars: "+bars+"<br/>Diskotheken: "+diskos
                 +"<br/>Kinos: "+kinos+"<br/>Theater: "+theater+"<br/>Museen: "+museen)
                 .style("left", (d3.event.pageX + 10) + "px")
-                .style("top", (d3.event.pageY - 110) + "px");
+                .style("top", (d3.event.pageY - 110) + "px")
+                .style("height", "100px");
         }).on("mouseout", function(){
             let name = this.id;
             name = name.substring(0, name.length-1);
